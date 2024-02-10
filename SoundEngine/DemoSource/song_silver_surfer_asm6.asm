@@ -2,300 +2,335 @@
 
 music_data_silver_surfer_c_stephen_ruddy:
 	db 1
-	dw @instruments
-	dw @samples-4
+	dw @music_data_silver_surfer_c_stephen_ruddy_instruments
+	dw @music_data_silver_surfer_c_stephen_ruddy_samples-4
 ; 00 : BGM2
-	dw @song0ch0
-	dw @song0ch1
-	dw @song0ch2
-	dw @song0ch3
-	dw @song0ch4
-	db <(@tempo_env_1_mid), >(@tempo_env_1_mid), 0, 0
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch0
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch1
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch2
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch3
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch4
+	db <(@music_data_silver_surfer_c_stephen_ruddy_tempo_env_1_mid), >(@music_data_silver_surfer_c_stephen_ruddy_tempo_env_1_mid), 0, 0
 
-@instruments:
-	dw @env22,@env30,@env35,@env0 ; 00 : PlainDuty0
-	dw @env61,@env58,@env35,@env0 ; 01 : TriSnare
-	dw @env57,@env28,@env35,@env0 ; 02 : TriBassDrum
-	dw @env46,@env39,@env35,@env0 ; 03 : NoiseHitHat1
-	dw @env40,@env39,@env35,@env0 ; 04 : NoiseHiHat2
-	dw @env12,@env41,@env35,@env0 ; 05 : NoiseSnare
-	dw @env52,@env45,@env35,@env0 ; 06 : NoiseBassDrumShort
-	dw @env60,@env39,@env35,@env0 ; 07 : NoiseBassDrumLong
-	dw @env32,@env26,@env7,@env51 ; 08 : SqGuitarOctaveAlt
-	dw @env54,@env26,@env7,@env51 ; 09 : SqGuitarOctaveAltFast
-	dw @env22,@env30,@env36,@env0 ; 0a : PlainDuty2
-	dw @env31,@env39,@env35,@env0 ; 0b : NoiseIntroCrash4
-	dw @env37,@env44,@env35,@env0 ; 0c : NoiseIntroCrash3
-	dw @env20,@env49,@env35,@env0 ; 0d : NoiseIntroCrash1
-	dw @env22,@env33,@env38,@env0 ; 0e : NoiseWeirdIntro1
-	dw @env8,@env30,@env35,@env24 ; 0f : SqVerseAMelodyDuty0
-	dw @env17,@env30,@env36,@env62 ; 10 : SqHighPitchNoise
-	dw @env22,@env30,@env15,@env0 ; 11 : NoiseWeirdIntro2
-	dw @env5,@env30,@env36,@env29 ; 12 : SqIntroSlide
-	dw @env14,@env42,@env35,@env0 ; 13 : NoiseIntroCrash2
-	dw @env6,@env30,@env35,@env0 ; 14 : SqIntroArpeggio
-	dw @env48,@env30,@env7,@env3 ; 15 : SqVerseBMelodyDuty3
-	dw @env55,@env30,@env36,@env53 ; 16 : SqVerseBMelodyDuty2
-	dw @env59,@env30,@env38,@env0 ; 17 : SqVerseAArpeggio
-	dw @env8,@env30,@env38,@env24 ; 18 : SqVerseAMelodyDuty1
-	dw @env8,@env19,@env35,@env0 ; 19 : SqVerseAMelodyDuty0Oct
-	dw @env22,@env4,@env35,@env0 ; 1a : SqVerseABleepOctave
-	dw @env9,@env30,@env36,@env0 ; 1b : SqVerseABleeps
-	dw @env22,@env30,@env7,@env0 ; 1c : PlainDuty3
-	dw @env56,@env13,@env7,@env0 ; 1d : SqOutroOctave
-	dw @env56,@env30,@env35,@env0 ; 1e : SqVerseBArpeggio
-	dw @env32,@env27,@env35,@env11 ; 1f : SqGuitarOctave
-	dw @env8,@env30,@env36,@env24 ; 20 : SqVerseAMelodyDuty2
+@music_data_silver_surfer_c_stephen_ruddy_instruments:
+	dw @music_data_silver_surfer_c_stephen_ruddy_env22,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 00 : PlainDuty0
+	dw @music_data_silver_surfer_c_stephen_ruddy_env61,@music_data_silver_surfer_c_stephen_ruddy_env58,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 01 : TriSnare
+	dw @music_data_silver_surfer_c_stephen_ruddy_env57,@music_data_silver_surfer_c_stephen_ruddy_env28,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 02 : TriBassDrum
+	dw @music_data_silver_surfer_c_stephen_ruddy_env46,@music_data_silver_surfer_c_stephen_ruddy_env39,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 03 : NoiseHitHat1
+	dw @music_data_silver_surfer_c_stephen_ruddy_env40,@music_data_silver_surfer_c_stephen_ruddy_env39,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 04 : NoiseHiHat2
+	dw @music_data_silver_surfer_c_stephen_ruddy_env12,@music_data_silver_surfer_c_stephen_ruddy_env41,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 05 : NoiseSnare
+	dw @music_data_silver_surfer_c_stephen_ruddy_env52,@music_data_silver_surfer_c_stephen_ruddy_env45,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 06 : NoiseBassDrumShort
+	dw @music_data_silver_surfer_c_stephen_ruddy_env60,@music_data_silver_surfer_c_stephen_ruddy_env39,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 07 : NoiseBassDrumLong
+	dw @music_data_silver_surfer_c_stephen_ruddy_env32,@music_data_silver_surfer_c_stephen_ruddy_env26,@music_data_silver_surfer_c_stephen_ruddy_env7,@music_data_silver_surfer_c_stephen_ruddy_env51 ; 08 : SqGuitarOctaveAlt
+	dw @music_data_silver_surfer_c_stephen_ruddy_env54,@music_data_silver_surfer_c_stephen_ruddy_env26,@music_data_silver_surfer_c_stephen_ruddy_env7,@music_data_silver_surfer_c_stephen_ruddy_env51 ; 09 : SqGuitarOctaveAltFast
+	dw @music_data_silver_surfer_c_stephen_ruddy_env22,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env36,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 0a : PlainDuty2
+	dw @music_data_silver_surfer_c_stephen_ruddy_env31,@music_data_silver_surfer_c_stephen_ruddy_env39,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 0b : NoiseIntroCrash4
+	dw @music_data_silver_surfer_c_stephen_ruddy_env37,@music_data_silver_surfer_c_stephen_ruddy_env44,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 0c : NoiseIntroCrash3
+	dw @music_data_silver_surfer_c_stephen_ruddy_env20,@music_data_silver_surfer_c_stephen_ruddy_env49,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 0d : NoiseIntroCrash1
+	dw @music_data_silver_surfer_c_stephen_ruddy_env22,@music_data_silver_surfer_c_stephen_ruddy_env33,@music_data_silver_surfer_c_stephen_ruddy_env38,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 0e : NoiseWeirdIntro1
+	dw @music_data_silver_surfer_c_stephen_ruddy_env8,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env24 ; 0f : SqVerseAMelodyDuty0
+	dw @music_data_silver_surfer_c_stephen_ruddy_env17,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env36,@music_data_silver_surfer_c_stephen_ruddy_env62 ; 10 : SqHighPitchNoise
+	dw @music_data_silver_surfer_c_stephen_ruddy_env22,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env15,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 11 : NoiseWeirdIntro2
+	dw @music_data_silver_surfer_c_stephen_ruddy_env5,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env36,@music_data_silver_surfer_c_stephen_ruddy_env29 ; 12 : SqIntroSlide
+	dw @music_data_silver_surfer_c_stephen_ruddy_env14,@music_data_silver_surfer_c_stephen_ruddy_env42,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 13 : NoiseIntroCrash2
+	dw @music_data_silver_surfer_c_stephen_ruddy_env6,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 14 : SqIntroArpeggio
+	dw @music_data_silver_surfer_c_stephen_ruddy_env48,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env7,@music_data_silver_surfer_c_stephen_ruddy_env3 ; 15 : SqVerseBMelodyDuty3
+	dw @music_data_silver_surfer_c_stephen_ruddy_env55,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env36,@music_data_silver_surfer_c_stephen_ruddy_env53 ; 16 : SqVerseBMelodyDuty2
+	dw @music_data_silver_surfer_c_stephen_ruddy_env59,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env38,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 17 : SqVerseAArpeggio
+	dw @music_data_silver_surfer_c_stephen_ruddy_env8,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env38,@music_data_silver_surfer_c_stephen_ruddy_env24 ; 18 : SqVerseAMelodyDuty1
+	dw @music_data_silver_surfer_c_stephen_ruddy_env8,@music_data_silver_surfer_c_stephen_ruddy_env19,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 19 : SqVerseAMelodyDuty0Oct
+	dw @music_data_silver_surfer_c_stephen_ruddy_env22,@music_data_silver_surfer_c_stephen_ruddy_env4,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 1a : SqVerseABleepOctave
+	dw @music_data_silver_surfer_c_stephen_ruddy_env9,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env36,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 1b : SqVerseABleeps
+	dw @music_data_silver_surfer_c_stephen_ruddy_env22,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env7,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 1c : PlainDuty3
+	dw @music_data_silver_surfer_c_stephen_ruddy_env56,@music_data_silver_surfer_c_stephen_ruddy_env13,@music_data_silver_surfer_c_stephen_ruddy_env7,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 1d : SqOutroOctave
+	dw @music_data_silver_surfer_c_stephen_ruddy_env56,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env0 ; 1e : SqVerseBArpeggio
+	dw @music_data_silver_surfer_c_stephen_ruddy_env32,@music_data_silver_surfer_c_stephen_ruddy_env27,@music_data_silver_surfer_c_stephen_ruddy_env35,@music_data_silver_surfer_c_stephen_ruddy_env11 ; 1f : SqGuitarOctave
+	dw @music_data_silver_surfer_c_stephen_ruddy_env8,@music_data_silver_surfer_c_stephen_ruddy_env30,@music_data_silver_surfer_c_stephen_ruddy_env36,@music_data_silver_surfer_c_stephen_ruddy_env24 ; 20 : SqVerseAMelodyDuty2
 
-@env0:
+@music_data_silver_surfer_c_stephen_ruddy_env0:
 	db $00,$c0,$7f,$00,$02
-@env1:
+@music_data_silver_surfer_c_stephen_ruddy_env1:
 	db $c0,$cc,$c3,$cf,$c7,$d3,$cc,$d8,$c7,$cc,$cf,$d3,$00,$00
-@env2:
+@music_data_silver_surfer_c_stephen_ruddy_env2:
 	db $c0,$02,$c4,$02,$c9,$02,$c4,$c4,$c4,$00,$00
-@env3:
+@music_data_silver_surfer_c_stephen_ruddy_env3:
 	db $00,$c0,$08,$c0,$bf,$be,$bd,$be,$bf,$c0,$c1,$c2,$c3,$c2,$c1,$00,$03
-@env4:
+@music_data_silver_surfer_c_stephen_ruddy_env4:
 	db $c0,$03,$b4,$00,$02
-@env5:
+@music_data_silver_surfer_c_stephen_ruddy_env5:
 	db $00,$c3,$7f,$00,$02
-@env6:
+@music_data_silver_surfer_c_stephen_ruddy_env6:
 	db $04,$c5,$00,$01,$c4,$03,$c3,$03,$c2,$00,$08
-@env7:
+@music_data_silver_surfer_c_stephen_ruddy_env7:
 	db $c3,$7f,$00,$00
-@env8:
+@music_data_silver_surfer_c_stephen_ruddy_env8:
 	db $00,$c2,$c4,$c5,$c6,$c4,$00,$05
-@env9:
+@music_data_silver_surfer_c_stephen_ruddy_env9:
 	db $00,$c1,$c2,$c3,$c4,$00,$04
-@env10:
+@music_data_silver_surfer_c_stephen_ruddy_env10:
 	db $c0,$c0,$cc,$cc,$c4,$c4,$d0,$d0,$c7,$c7,$d3,$d3,$00,$00
-@env11:
+@music_data_silver_surfer_c_stephen_ruddy_env11:
 	db $00,$c0,$c0,$c1,$00,$03
-@env12:
+@music_data_silver_surfer_c_stephen_ruddy_env12:
 	db $00,$c7,$c5,$c5,$c4,$c4,$c3,$c3,$c2,$c2,$c1,$c1,$c0,$00,$0c
-@env13:
+@music_data_silver_surfer_c_stephen_ruddy_env13:
 	db $c0,$c0,$cc,$00,$02
-@env14:
+@music_data_silver_surfer_c_stephen_ruddy_env14:
 	db $00,$c5,$c4,$03,$c3,$04,$c2,$00,$06
-@env15:
+@music_data_silver_surfer_c_stephen_ruddy_env15:
 	db $c0,$c0,$c1,$c1,$c0,$c0,$00,$00
-@env16:
+@music_data_silver_surfer_c_stephen_ruddy_env16:
 	db $c0,$02,$c5,$02,$c8,$02,$c5,$c5,$c5,$00,$00
-@env17:
+@music_data_silver_surfer_c_stephen_ruddy_env17:
 	db $00,$c8,$c7,$c6,$c5,$c4,$c3,$c2,$c1,$03,$c2,$c4,$c3,$c2,$c1,$c1,$c2,$c4,$c3,$c2,$c1,$c1,$c2,$c6,$c5,$c4,$c3,$c2,$c1,$c4,$c3,$c2,$c1,$02,$c3,$c2,$c1,$02,$c2,$c4,$c3,$c2,$c1,$c1,$c4,$00,$01
-@env18:
+@music_data_silver_surfer_c_stephen_ruddy_env18:
 	db $c0,$cc,$c4,$d0,$c7,$d3,$cc,$d8,$c7,$cc,$cf,$d3,$00,$00
-@env19:
+@music_data_silver_surfer_c_stephen_ruddy_env19:
 	db $c0,$c0,$b4,$b4,$c0,$c0,$00,$00
-@env20:
+@music_data_silver_surfer_c_stephen_ruddy_env20:
 	db $0b,$c7,$c3,$10,$c2,$05,$c1,$05,$c0,$00,$08,$c1,$c2,$00,$0c
-@env21:
+@music_data_silver_surfer_c_stephen_ruddy_env21:
 	db $c0,$c0,$cc,$cc,$c4,$c4,$d0,$d0,$c7,$c7,$d3,$d3,$cb,$cb,$d7,$d7,$00,$00
-@env22:
+@music_data_silver_surfer_c_stephen_ruddy_env22:
 	db $00,$cf,$7f,$00,$02
-@env23:
+@music_data_silver_surfer_c_stephen_ruddy_env23:
 	db $c0,$c0,$cc,$cc,$c4,$c4,$d0,$d0,$c6,$c6,$d2,$d2,$c9,$c9,$d5,$d5,$00,$00
-@env24:
+@music_data_silver_surfer_c_stephen_ruddy_env24:
 	db $00,$c0,$09,$c0,$be,$bc,$be,$c0,$c2,$c4,$c2,$00,$03
-@env25:
+@music_data_silver_surfer_c_stephen_ruddy_env25:
 	db $c0,$02,$c4,$02,$c7,$02,$c4,$c4,$c4,$00,$00
-@env26:
+@music_data_silver_surfer_c_stephen_ruddy_env26:
 	db $c0,$d3,$c0,$00,$02
-@env27:
+@music_data_silver_surfer_c_stephen_ruddy_env27:
 	db $c0,$cc,$c0,$00,$02
-@env28:
+@music_data_silver_surfer_c_stephen_ruddy_env28:
 	db $c0,$be,$ba,$b6,$b4,$b2,$00,$05
-@env29:
+@music_data_silver_surfer_c_stephen_ruddy_env29:
 	db $00,$b5,$c4,$d3,$e2,$f1,$ff,$00,$01
-@env30:
+@music_data_silver_surfer_c_stephen_ruddy_env30:
 	db $c0,$7f,$00,$01
-@env31:
+@music_data_silver_surfer_c_stephen_ruddy_env31:
 	db $00,$c4,$03,$c3,$03,$c2,$00,$05
-@env32:
+@music_data_silver_surfer_c_stephen_ruddy_env32:
 	db $00,$c4,$7f,$00,$02
-@env33:
+@music_data_silver_surfer_c_stephen_ruddy_env33:
 	db $c0,$bf,$be,$bd,$bc,$bb,$ba,$b9,$b8,$b7,$b6,$b5,$00,$00
-@env34:
+@music_data_silver_surfer_c_stephen_ruddy_env34:
 	db $c0,$02,$c5,$02,$c9,$02,$c5,$c5,$c5,$00,$00
-@env35:
+@music_data_silver_surfer_c_stephen_ruddy_env35:
 	db $7f,$00,$00
-@env36:
+@music_data_silver_surfer_c_stephen_ruddy_env36:
 	db $c2,$7f,$00,$00
-@env37:
+@music_data_silver_surfer_c_stephen_ruddy_env37:
 	db $00,$c5,$c4,$02,$c3,$03,$c2,$04,$c1,$00,$08
-@env38:
+@music_data_silver_surfer_c_stephen_ruddy_env38:
 	db $c1,$7f,$00,$00
-@env39:
+@music_data_silver_surfer_c_stephen_ruddy_env39:
 	db $c0,$c2,$00,$01
-@env40:
+@music_data_silver_surfer_c_stephen_ruddy_env40:
 	db $00,$c3,$c3,$c2,$c1,$c0,$00,$05
-@env41:
+@music_data_silver_surfer_c_stephen_ruddy_env41:
 	db $c0,$c3,$00,$01
-@env42:
+@music_data_silver_surfer_c_stephen_ruddy_env42:
 	db $c0,$c6,$00,$01
-@env43:
+@music_data_silver_surfer_c_stephen_ruddy_env43:
 	db $00,$c0,$bf,$be,$02,$bf,$c1,$c2,$02,$c1,$00,$01
-@env44:
+@music_data_silver_surfer_c_stephen_ruddy_env44:
 	db $c0,$c4,$00,$01
-@env45:
+@music_data_silver_surfer_c_stephen_ruddy_env45:
 	db $c0,$c5,$00,$01
-@env46:
+@music_data_silver_surfer_c_stephen_ruddy_env46:
 	db $00,$c4,$02,$c3,$02,$c2,$02,$c1,$00,$07
-@env47:
+@music_data_silver_surfer_c_stephen_ruddy_env47:
 	db $c0,$c0,$cc,$cc,$c4,$c4,$cf,$cf,$c7,$c7,$d3,$d3,$cc,$cc,$d8,$d8,$c7,$c7,$cc,$cc,$cf,$cf,$d3,$d3,$00,$00
-@env48:
+@music_data_silver_surfer_c_stephen_ruddy_env48:
 	db $04,$c5,$00,$01,$c3,$c1,$00,$05
-@env49:
+@music_data_silver_surfer_c_stephen_ruddy_env49:
 	db $c0,$c4,$02,$c5,$03,$c6,$04,$c7,$00,$07
-@env50:
+@music_data_silver_surfer_c_stephen_ruddy_env50:
 	db $c0,$02,$c5,$02,$c7,$02,$c5,$c5,$c5,$00,$00
-@env51:
+@music_data_silver_surfer_c_stephen_ruddy_env51:
 	db $00,$c0,$c1,$00,$02
-@env52:
+@music_data_silver_surfer_c_stephen_ruddy_env52:
 	db $00,$c5,$c3,$c2,$c1,$c0,$00,$05
-@env53:
+@music_data_silver_surfer_c_stephen_ruddy_env53:
 	db $00,$c0,$03,$c0,$bf,$be,$bd,$be,$bf,$c0,$c1,$c2,$c3,$c2,$c1,$00,$03
-@env54:
+@music_data_silver_surfer_c_stephen_ruddy_env54:
 	db $00,$c4,$c3,$c4,$c4,$c2,$c1,$00,$06
-@env55:
+@music_data_silver_surfer_c_stephen_ruddy_env55:
 	db $04,$c4,$00,$01,$c2,$c1,$00,$05
-@env56:
+@music_data_silver_surfer_c_stephen_ruddy_env56:
 	db $00,$c5,$c5,$c4,$c4,$00,$01
-@env57:
+@music_data_silver_surfer_c_stephen_ruddy_env57:
 	db $00,$cf,$05,$c0,$00,$03
-@env58:
+@music_data_silver_surfer_c_stephen_ruddy_env58:
 	db $c0,$bf,$00,$01
-@env59:
+@music_data_silver_surfer_c_stephen_ruddy_env59:
 	db $00,$c5,$c5,$c4,$02,$c3,$00,$05
-@env60:
+@music_data_silver_surfer_c_stephen_ruddy_env60:
 	db $00,$c5,$c4,$c4,$c3,$02,$c2,$02,$c1,$00,$08
-@env61:
+@music_data_silver_surfer_c_stephen_ruddy_env61:
 	db $00,$cf,$cf,$c0,$00,$03
-@env62:
+@music_data_silver_surfer_c_stephen_ruddy_env62:
 	db $00,$bf,$c0,$00,$02
 
-@samples:
+@music_data_silver_surfer_c_stephen_ruddy_samples:
 
-@tempo_env_1_mid:
+@music_data_silver_surfer_c_stephen_ruddy_tempo_env_1_mid:
 	db $03,$05,$80
 
-@song0ch0:
-@song0ref1:
+@music_data_silver_surfer_c_stephen_ruddy_song0ch0:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref1:
 	db $72, $80, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89
 	db $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89
 	db $22, $89, $27, $89, $22, $89, $27, $89, $22, $89, $27, $89, $22, $89
-@song0ch0loop:
-	db $4c, $47, <(@tempo_env_1_mid), >(@tempo_env_1_mid), $7f, $4b, <(@env18), >(@env18), $a8, $19, $c5, $4b, <(@env1), >(@env1)
-	db $43, $1b, $b1, $45, $91, $4b, <(@env18), >(@env18), $1e, $ad, $43, $20, $ff, $a9, $45, $91, $48, $4d, $19, $c5, $4b, <(@env1)
-	db >(@env1), $43, $1b, $b1, $45, $91, $4b, <(@env18), >(@env18), $1e, $ad, $43, $20, $ff, $a9, $45, $91, $48, $4d, $19, $c5
-	db $4b, <(@env1), >(@env1), $43, $1b, $b1, $45, $91, $4b, <(@env18), >(@env18), $1e, $ad, $43, $20, $ff, $a9, $45, $91, $4d
-	db $20, $95, $48, $74, $4b, <(@env47), >(@env47), $80, $1c, $ff, $bd, $4b, <(@env23), >(@env23), $1c, $ff, $bd, $48, $7f
-	db $4b, <(@env30), >(@env30), $4c, $be
-@song0ref165:
+@music_data_silver_surfer_c_stephen_ruddy_song0ch0loop:
+	db $4c, $47, <(@music_data_silver_surfer_c_stephen_ruddy_tempo_env_1_mid), >(@music_data_silver_surfer_c_stephen_ruddy_tempo_env_1_mid)
+	db $7f, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env18), >(@music_data_silver_surfer_c_stephen_ruddy_env18), $a8
+	db $19, $c5, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env1), >(@music_data_silver_surfer_c_stephen_ruddy_env1), $43
+	db $1b, $b1, $45, $91, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env18), >(@music_data_silver_surfer_c_stephen_ruddy_env18)
+	db $1e, $ad, $43, $20, $ff, $a9, $45, $91, $48, $4d, $19, $c5, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env1), >(@music_data_silver_surfer_c_stephen_ruddy_env1)
+	db $43, $1b, $b1, $45, $91, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env18), >(@music_data_silver_surfer_c_stephen_ruddy_env18)
+	db $1e, $ad, $43, $20, $ff, $a9, $45, $91, $48, $4d, $19, $c5, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env1), >(@music_data_silver_surfer_c_stephen_ruddy_env1)
+	db $43, $1b, $b1, $45, $91, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env18), >(@music_data_silver_surfer_c_stephen_ruddy_env18)
+	db $1e, $ad, $43, $20, $ff, $a9, $45, $91, $4d, $20, $95, $48, $74, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env47)
+	db >(@music_data_silver_surfer_c_stephen_ruddy_env47), $80, $1c, $ff, $bd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env23)
+	db >(@music_data_silver_surfer_c_stephen_ruddy_env23), $1c, $ff, $bd, $48, $7f, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env30)
+	db >(@music_data_silver_surfer_c_stephen_ruddy_env30), $4c, $be
+@music_data_silver_surfer_c_stephen_ruddy_song0ref165:
 	db $18, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81
 	db $0c, $85, $00, $81, $11, $9d, $00, $81, $0f, $91, $00, $81, $0e, $91, $00, $81, $0f, $91, $00, $81, $18, $85, $00, $81
 	db $0c, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81, $0c, $85, $00, $81
 	db $11, $9d, $00, $81, $13, $91, $00, $81, $16, $91, $00, $81, $18, $91, $00, $81, $48
 	db $41, $58
-	dw @song0ref165
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref165
 	db $48
 	db $41, $58
-	dw @song0ref165
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref165
 	db $48
 	db $41, $58
-	dw @song0ref165
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref165
 	db $48
 	db $41, $58
-	dw @song0ref165
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref165
 	db $48
 	db $41, $58
-	dw @song0ref165
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref165
 	db $48
 	db $41, $58
-	dw @song0ref165
-	db $48, $4b, <(@env16), >(@env16), $ae, $1f, $dd, $4b, <(@env2), >(@env2), $20, $dd, $4b, <(@env34), >(@env34), $1d, $dd
-	db $4b, <(@env50), >(@env50), $1f, $ad, $4b, <(@env25), >(@env25), $1f, $ad, $48, $4b, <(@env16), >(@env16), $43, $1f, $dd
-	db $4b, <(@env2), >(@env2), $20, $dd, $4b, <(@env34), >(@env34), $1d, $dd, $4b, <(@env50), >(@env50), $1f, $ad, $4b, <(@env25)
-	db >(@env25), $1f, $ad, $48, $4b, <(@env16), >(@env16), $43, $1f, $dd, $4b, <(@env2), >(@env2), $20, $dd, $4b, <(@env34)
-	db >(@env34), $1d, $dd, $4b, <(@env50), >(@env50), $1f, $ad, $4b, <(@env25), >(@env25), $1f, $ad, $48, $4b, <(@env16), >(@env16)
-	db $43, $1f, $dd, $4b, <(@env2), >(@env2), $20, $dd, $4b, <(@env34), >(@env34), $1d, $dd, $4b, <(@env50), >(@env50), $1f
-	db $ad, $4b, <(@env25), >(@env25), $1f, $ad, $48, $73, $4b, <(@env30), >(@env30), $4c, $94, $24, $ad, $43, $50, $fd, $30
-	db $48, $ff, $ff, $cd, $48, $7f, $a0, $40, $57, $dd, $40, $57, $dd, $40, $57, $dd, $40, $57, $dd, $48, $40, $57, $dd, $40
-	db $57, $dd, $40, $57, $dd, $40, $57, $dd
-@song0ref430:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref165
+	db $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env16), >(@music_data_silver_surfer_c_stephen_ruddy_env16), $ae
+	db $1f, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env2), >(@music_data_silver_surfer_c_stephen_ruddy_env2), $20
+	db $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env34), >(@music_data_silver_surfer_c_stephen_ruddy_env34), $1d
+	db $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env50), >(@music_data_silver_surfer_c_stephen_ruddy_env50), $1f
+	db $ad, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env25), >(@music_data_silver_surfer_c_stephen_ruddy_env25), $1f
+	db $ad, $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env16), >(@music_data_silver_surfer_c_stephen_ruddy_env16)
+	db $43, $1f, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env2), >(@music_data_silver_surfer_c_stephen_ruddy_env2)
+	db $20, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env34), >(@music_data_silver_surfer_c_stephen_ruddy_env34)
+	db $1d, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env50), >(@music_data_silver_surfer_c_stephen_ruddy_env50)
+	db $1f, $ad, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env25), >(@music_data_silver_surfer_c_stephen_ruddy_env25)
+	db $1f, $ad, $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env16), >(@music_data_silver_surfer_c_stephen_ruddy_env16)
+	db $43, $1f, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env2), >(@music_data_silver_surfer_c_stephen_ruddy_env2)
+	db $20, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env34), >(@music_data_silver_surfer_c_stephen_ruddy_env34)
+	db $1d, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env50), >(@music_data_silver_surfer_c_stephen_ruddy_env50)
+	db $1f, $ad, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env25), >(@music_data_silver_surfer_c_stephen_ruddy_env25)
+	db $1f, $ad, $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env16), >(@music_data_silver_surfer_c_stephen_ruddy_env16)
+	db $43, $1f, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env2), >(@music_data_silver_surfer_c_stephen_ruddy_env2)
+	db $20, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env34), >(@music_data_silver_surfer_c_stephen_ruddy_env34)
+	db $1d, $dd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env50), >(@music_data_silver_surfer_c_stephen_ruddy_env50)
+	db $1f, $ad, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env25), >(@music_data_silver_surfer_c_stephen_ruddy_env25)
+	db $1f, $ad, $48, $73, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env30), >(@music_data_silver_surfer_c_stephen_ruddy_env30)
+	db $4c, $94, $24, $ad, $43, $50, $fd, $30, $48, $ff, $ff, $cd, $48, $7f, $a0, $40, $57, $dd, $40, $57, $dd, $40, $57, $dd
+	db $40, $57, $dd, $48, $40, $57, $dd, $40, $57, $dd, $40, $57, $dd, $40, $57, $dd
+@music_data_silver_surfer_c_stephen_ruddy_song0ref430:
 	db $48, $90, $17, $95, $0b, $95, $17, $95, $0b, $95, $17, $95, $0b, $95, $17, $95, $0b, $95, $15, $95, $92, $0b, $89, $15
 	db $89, $0b, $89, $0b, $89, $15, $89, $0b, $89, $0b, $89, $15, $89, $0b, $89, $0b, $89, $15, $89, $0b, $89, $0b, $89, $15
 	db $89
 	db $41, $2e
-	dw @song0ref430
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref430
 	db $41, $2e
-	dw @song0ref430
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref430
 	db $41, $2e
-	dw @song0ref430
-	db $48, $4b, <(@env10), >(@env10), $bc, $18, $ff, $bd, $4b, <(@env21), >(@env21), $16, $ff, $bd, $48, $4b, <(@env10), >(@env10)
-	db $18, $ff, $bd, $4b, <(@env21), >(@env21), $16, $ff, $bd, $48, $4b, <(@env10), >(@env10), $15, $ff, $bd, $4b, <(@env21)
-	db >(@env21), $13, $ff, $bd, $48, $4b, <(@env10), >(@env10), $15, $ff, $bd, $4b, <(@env21), >(@env21), $13, $ff, $bd, $48
-	db $4b, <(@env30), >(@env30), $4c, $ba
-@song0ref547:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref430
+	db $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env10), >(@music_data_silver_surfer_c_stephen_ruddy_env10), $bc
+	db $18, $ff, $bd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env21), >(@music_data_silver_surfer_c_stephen_ruddy_env21)
+	db $16, $ff, $bd, $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env10), >(@music_data_silver_surfer_c_stephen_ruddy_env10)
+	db $18, $ff, $bd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env21), >(@music_data_silver_surfer_c_stephen_ruddy_env21)
+	db $16, $ff, $bd, $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env10), >(@music_data_silver_surfer_c_stephen_ruddy_env10)
+	db $15, $ff, $bd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env21), >(@music_data_silver_surfer_c_stephen_ruddy_env21)
+	db $13, $ff, $bd, $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env10), >(@music_data_silver_surfer_c_stephen_ruddy_env10)
+	db $15, $ff, $bd, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env21), >(@music_data_silver_surfer_c_stephen_ruddy_env21)
+	db $13, $ff, $bd, $48, $4b, <(@music_data_silver_surfer_c_stephen_ruddy_env30), >(@music_data_silver_surfer_c_stephen_ruddy_env30)
+	db $4c, $ba
+@music_data_silver_surfer_c_stephen_ruddy_song0ref547:
 	db $0b, $85, $0d, $85, $0f, $85, $12, $85, $17, $85, $19, $85, $1b, $85, $1e, $85, $23, $85, $25, $85, $27, $85, $2a, $85
 	db $27, $85, $25, $85, $23, $85, $1e, $85, $1b, $85, $19, $85, $17, $85, $12, $85, $0f, $85, $0d, $85, $0b, $85, $06, $85
 	db $0d, $85, $0f, $85, $11, $85, $14, $85, $19, $85, $1b, $85, $1d, $85, $20, $85, $25, $85, $27, $85, $29, $85, $2c, $85
 	db $29, $85, $27, $85, $25, $85, $20, $85, $1d, $85, $1b, $85, $19, $85, $14, $85, $11, $85, $0f, $85, $0d, $85, $08, $85
 	db $48
 	db $41, $60
-	dw @song0ref547
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref547
 	db $48
 	db $41, $30
-	dw @song0ref547
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref547
 	db $41, $30
-	dw @song0ref547
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref547
 	db $48
-@song0ref655:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref655:
 	db $0b, $85, $0f, $85, $11, $85, $14, $85, $17, $85, $1b, $85, $1d, $85, $20, $85, $23, $85, $27, $85, $29, $85, $2c, $85
 	db $29, $85, $27, $85, $23, $85, $20, $85, $1d, $85, $1b, $85, $17, $85, $14, $85, $11, $85, $0f, $85, $0b, $85, $08, $85
 	db $41, $30
-	dw @song0ref655
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref655
 	db $48
 	db $41, $3c
-	dw @song0ref1
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref1
 	db $42
-	dw @song0ch0loop
-@song0ch1:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch0loop
+@music_data_silver_surfer_c_stephen_ruddy_song0ch1:
 	db $a4, $50, $fe, $2f, $44, $ff, $ff, $e5
-@song0ch1loop:
+@music_data_silver_surfer_c_stephen_ruddy_song0ch1loop:
 	db $74, $94, $24, $25, $9b, $50, $0f, $31, $2c, $91, $72, $50, $0f, $31, $2c, $91, $74, $26, $27, $9b, $50, $13, $33, $2c
-	db $91, $72, $50, $13, $33, $2c, $91, $74, $28, $29, $2a, $89, $49, <(@env43), >(@env43), $9d, $49, <(@env0), >(@env0), $4a
-	db $81, $94, $2b, $2c, $8d, $49, <(@env43), >(@env43), $ff, $83, $49, <(@env0), >(@env0), $4a, $81, $94, $50, $0c, $38, $32
-	db $91, $72, $50, $0c, $38, $32, $91, $74, $b8, $30, $31, $9b, $50, $0f, $3d, $34, $91, $72, $50, $0f, $3d, $34, $91, $74
-	db $32, $33, $9b, $50, $16, $3f, $32, $91, $72, $50, $16, $3f, $32, $91, $74, $34, $35, $36, $89, $49, <(@env43), >(@env43)
-	db $9d, $49, <(@env0), >(@env0), $4a, $81, $b8, $37, $38, $8d, $49, <(@env43), >(@env43), $ff, $83, $49, <(@env0), >(@env0)
-	db $4a, $81, $b8, $50, $0d, $44, $39, $91, $72, $50, $0d, $44, $39, $91, $74, $94, $37, $38, $9b, $50, $0f, $44, $38, $91
-	db $72, $50, $0f, $44, $38, $91, $74, $39, $3a, $9b, $50, $14, $46, $36, $91, $72, $50, $14, $46, $36, $91, $74, $3b, $3c
-	db $3d, $87, $49, <(@env43), >(@env43), $9f, $49, <(@env0), >(@env0), $4a, $81, $94, $3e, $3f, $8d, $49, <(@env43), >(@env43)
-	db $ff, $83, $49, <(@env0), >(@env0), $4a, $81, $94, $50, $0c, $4b, $3d, $91, $72, $50, $0c, $4b, $3d, $91, $00, $95, $74
-	db $3a, $3b, $97, $49, <(@env43), >(@env43), $f9, $49, <(@env0), >(@env0), $4a, $81, $94, $50, $0c, $47, $3b, $91, $72, $50
-	db $0c, $47, $3b, $91, $74, $3c, $3d, $8d, $49, <(@env43), >(@env43), $ff, $81, $49, <(@env0), >(@env0), $4a, $81, $94, $50
-	db $0b, $49, $3c, $93, $72, $50, $0c, $49, $3c, $91, $7f, $b6
-@song0ref990:
+	db $91, $72, $50, $13, $33, $2c, $91, $74, $28, $29, $2a, $89, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43), >(@music_data_silver_surfer_c_stephen_ruddy_env43)
+	db $9d, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0), $4a, $81
+	db $94, $2b, $2c, $8d, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43), >(@music_data_silver_surfer_c_stephen_ruddy_env43)
+	db $ff, $83, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0), $4a
+	db $81, $94, $50, $0c, $38, $32, $91, $72, $50, $0c, $38, $32, $91, $74, $b8, $30, $31, $9b, $50, $0f, $3d, $34, $91, $72
+	db $50, $0f, $3d, $34, $91, $74, $32, $33, $9b, $50, $16, $3f, $32, $91, $72, $50, $16, $3f, $32, $91, $74, $34, $35, $36
+	db $89, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43), >(@music_data_silver_surfer_c_stephen_ruddy_env43), $9d
+	db $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0), $4a, $81, $b8
+	db $37, $38, $8d, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43), >(@music_data_silver_surfer_c_stephen_ruddy_env43)
+	db $ff, $83, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0), $4a
+	db $81, $b8, $50, $0d, $44, $39, $91, $72, $50, $0d, $44, $39, $91, $74, $94, $37, $38, $9b, $50, $0f, $44, $38, $91, $72
+	db $50, $0f, $44, $38, $91, $74, $39, $3a, $9b, $50, $14, $46, $36, $91, $72, $50, $14, $46, $36, $91, $74, $3b, $3c, $3d
+	db $87, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43), >(@music_data_silver_surfer_c_stephen_ruddy_env43), $9f
+	db $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0), $4a, $81, $94
+	db $3e, $3f, $8d, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43), >(@music_data_silver_surfer_c_stephen_ruddy_env43)
+	db $ff, $83, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0), $4a
+	db $81, $94, $50, $0c, $4b, $3d, $91, $72, $50, $0c, $4b, $3d, $91, $00, $95, $74, $3a, $3b, $97, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43)
+	db >(@music_data_silver_surfer_c_stephen_ruddy_env43), $f9, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0)
+	db $4a, $81, $94, $50, $0c, $47, $3b, $91, $72, $50, $0c, $47, $3b, $91, $74, $3c, $3d, $8d, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env43)
+	db >(@music_data_silver_surfer_c_stephen_ruddy_env43), $ff, $81, $49, <(@music_data_silver_surfer_c_stephen_ruddy_env0), >(@music_data_silver_surfer_c_stephen_ruddy_env0)
+	db $4a, $81, $94, $50, $0b, $49, $3c, $93, $72, $50, $0c, $49, $3c, $91, $7f, $b6
+@music_data_silver_surfer_c_stephen_ruddy_song0ref990:
 	db $22, $85, $29, $81, $27, $85, $22, $81, $2b, $85, $27, $81, $22, $85, $2b, $81, $27, $85, $22, $81, $2b, $85, $27, $81
 	db $27, $85, $2b, $81, $2b, $85, $27, $81, $22, $85, $2b, $81, $27, $85, $22, $81, $2b, $85, $27, $81, $22, $85, $2b, $81
 	db $2d, $85, $22, $81, $29, $85, $2d, $81, $30, $85, $29, $81, $29, $85, $30, $81
 	db $41, $40
-	dw @song0ref990
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref990
 	db $41, $40
-	dw @song0ref990
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref990
 	db $41, $40
-	dw @song0ref990
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref990
 	db $70, $00, $95, $b4, $24, $83, $71, $85, $29, $89, $2b, $89, $26, $72, $89, $27, $89, $29, $87, $73, $81, $22, $89, $27
 	db $89, $24, $83, $74, $85, $29, $89, $2b, $89, $26, $75, $89, $27, $89, $29, $87, $76, $81, $70, $00, $95, $30, $83, $71
 	db $85, $35, $89, $37, $89, $32, $72, $89, $33, $89, $35, $87, $73, $81, $2e, $89, $33, $89, $30, $83, $74, $85, $35, $89
 	db $37, $89, $32, $75, $89, $33, $89, $35, $87, $76, $81, $7f, $9e
-@song0ref1148:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref1148:
 	db $32, $89, $32, $89, $32, $89, $32, $9d, $00, $81, $32, $89, $33, $89, $35, $91, $00, $81, $32, $89, $33, $91, $00, $81
 	db $30, $89, $32, $91, $00, $81, $2e, $89, $2e, $89, $2e, $89, $30, $89, $2b, $89, $30, $89, $32, $89, $33, $89, $37, $a9
 	db $00, $81, $35, $a9, $00, $81, $b2
 	db $41, $36
-	dw @song0ref1148
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref1148
 	db $c0, $37, $c1, $00, $81, $35, $89, $33, $89, $32, $c1, $00, $81, $33, $89, $35, $89, $32, $c1, $00, $81, $33, $89, $35
 	db $89, $30, $43, $31, $81, $32, $8b, $00, $81, $31, $43, $30, $43, $2f, $8d, $00, $81, $2e, $43, $2d, $43, $2c, $43, $2b
 	db $8b, $00, $81, $2c, $43, $2d, $43, $2e, $43, $2f, $43, $30, $43, $31, $43, $32, $85, $00, $81, $33, $c1, $00, $81, $32
@@ -310,25 +345,25 @@ music_data_silver_surfer_c_stephen_ruddy:
 	db $89, $26, $c1, $00, $81, $24, $89, $1f, $89, $22, $d9, $00, $81, $24, $a9, $00, $81, $26, $a9, $00, $81, $73, $4e, $00
 	db $94, $2b, $dd, $43, $50, $fe, $37, $60, $ff, $ff, $9b, $00, $7f, $a0, $40, $60, $dd, $40, $60, $dd, $40, $60, $dd, $40
 	db $60, $dd, $40, $60, $ff, $bd, $40, $60, $dd, $40, $60, $dd
-@song0ref1530:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref1530:
 	db $90, $1c, $95, $10, $95, $1c, $95, $10, $95, $1c, $95, $10, $95, $1c, $95, $10, $95, $1a, $95, $92, $10, $89, $1a, $89
 	db $10, $89, $10, $89, $1a, $89, $10, $89, $10, $89, $1a, $89, $10, $89, $10, $89, $1a, $89, $10, $89, $10, $89, $1a, $89
 	db $41, $2e
-	dw @song0ref1530
-@song0ref1581:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref1530
+@music_data_silver_surfer_c_stephen_ruddy_song0ref1581:
 	db $90, $1e, $95, $12, $95, $1e, $95, $12, $95, $1e, $95, $12, $95, $1e, $95, $12, $95, $1c, $95, $92, $12, $89, $1c, $89
 	db $12, $89, $12, $89, $1c, $89, $12, $89, $12, $89, $1c, $89, $12, $89, $12, $89, $1c, $89, $12, $89, $12, $89, $1c, $89
 	db $41, $2e
-	dw @song0ref1581
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref1581
 	db $aa, $24, $89
-@song0ref1635:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref1635:
 	db $21, $1f, $81, $45, $81, $00, $22, $24, $81, $45, $81, $00, $27, $28, $81, $45, $81, $00, $2b, $89, $28, $25, $24, $45
 	db $81, $00, $27, $28, $81, $45, $81, $00, $2b, $83, $45, $81, $00, $2e, $30, $87, $2d, $2b, $81, $45, $81, $00, $28, $83
 	db $45, $81, $00, $29, $89, $26, $83, $45, $81, $00, $28, $83, $45, $81, $00, $25, $24, $87, $21, $1f, $81, $45, $81, $00
 	db $22, $95, $25, $26, $81, $45, $81, $00, $24, $a1, $26, $a1, $28, $a1, $29, $95, $2c, $2d, $8d, $45, $81, $00, $2a, $27
 	db $43, $24, $45, $81, $00
 	db $41, $5e
-	dw @song0ref1635
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref1635
 	db $74, $94, $2d, $2a, $27, $25, $97, $50, $0f, $31, $2c, $91, $72, $50, $0f, $31, $2c, $91, $74, $25, $26, $9b, $50, $0e
 	db $32, $2d, $91, $72, $50, $0e, $32, $2d, $91, $74, $26, $28, $9b, $50, $0f, $34, $2e, $91, $72, $50, $0f, $34, $2e, $91
 	db $74, $28, $2a, $9b, $50, $0e, $36, $30, $91, $72, $50, $0e, $36, $30, $91, $74, $2a, $2b, $9b, $50, $10, $37, $31, $8d
@@ -343,170 +378,170 @@ music_data_silver_surfer_c_stephen_ruddy:
 	db $2e, $30, $32, $34, $35, $d7, $37, $38, $87, $36, $35, $87, $33, $89, $31, $2f, $87, $2e, $89, $2c, $89, $2a, $29, $87
 	db $27, $89, $25, $23, $87, $22, $89, $20, $89, $1e, $1d, $87, $1b, $89, $19, $17, $87, $16, $89, $14, $87, $7f, $a4, $50
 	db $fe, $2f, $44, $ff, $ff, $e5, $42
-	dw @song0ch1loop
-@song0ch2:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch1loop
+@music_data_silver_surfer_c_stephen_ruddy_song0ch2:
 	db $ff, $ff, $b7, $82, $22, $89, $22, $89, $22, $95
-@song0ch2loop:
-@song0ref2071:
+@music_data_silver_surfer_c_stephen_ruddy_song0ch2loop:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2071:
 	db $84, $19, $89, $80, $0d, $b9, $84, $19, $89, $80, $0f, $89, $00, $ad, $84, $19, $89, $80, $12, $a1, $84, $19, $89, $80
 	db $14, $89, $12, $89, $14, $89, $84, $19, $89, $80, $12, $89, $82, $22, $81, $80, $14, $a9, $84, $19, $89, $80, $12, $89
 	db $82, $22, $81, $80, $14, $85, $82, $22, $81, $80, $14, $85, $82, $22, $81, $80, $14, $91
 	db $41, $2e
-	dw @song0ref2071
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2071
 	db $41, $2e
-	dw @song0ref2071
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2071
 	db $84, $19, $89, $80, $14, $89, $84, $19, $89, $80, $10, $89, $0e, $0f, $10, $91, $82, $23, $81, $80, $17, $91, $0e, $0f
 	db $10, $91, $84, $19, $89, $80, $10, $89, $0f, $10, $87, $84, $19, $89, $80, $10, $89, $0f, $10, $87, $84, $19, $89, $80
 	db $0f, $89, $84, $19, $89, $80, $0d, $89, $0b, $0c, $0d, $91, $82, $20, $81, $80, $14, $91, $0b, $0c, $0d, $91, $84, $19
 	db $89, $80, $0d, $89, $0c, $0d, $87, $84, $19, $89, $80, $0d, $89, $0c, $0d, $87, $84, $19, $89, $80, $0f, $89
-@song0ref2237:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2237:
 	db $84, $19, $89, $80, $0c, $85, $00, $81, $0c, $91, $00, $81, $82, $22, $81, $80, $18, $85, $0c, $85, $00, $81, $0c, $89
 	db $84, $19, $89, $80, $11, $91, $00, $81, $84, $19, $89, $80, $0f, $89, $82, $22, $81, $80, $0e, $91, $0f, $89, $82, $22
 	db $81, $80, $0f, $85, $84, $19, $89, $80, $0c, $85, $00, $81, $0c, $91, $00, $81, $82, $22, $81, $80, $18, $85, $0c, $85
 	db $00, $81, $0c, $89, $84, $19, $89, $80, $11, $91, $00, $81, $84, $19, $89, $80, $0f, $89, $82, $22, $81, $80, $16, $85
 	db $82, $22, $81, $80, $16, $85, $82, $22, $81, $80, $18, $85, $82, $22, $81, $80, $18, $85
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $41, $56
-	dw @song0ref2237
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2237
 	db $84, $19, $ff, $ff, $fd, $19, $89, $00, $a1
-@song0ref2393:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2393:
 	db $82, $22, $a1, $84, $19, $a1, $19, $95, $82, $22, $a1, $22, $89, $84, $19, $ad, $82, $22, $a1, $84, $19, $a1, $19, $95
 	db $82, $22, $89, $22, $89, $22, $89, $22, $89, $84, $19, $ad, $82, $22, $a1, $84, $19, $a1, $19, $95, $82, $22, $a1, $22
 	db $89, $84, $19, $ad, $82, $22, $a1, $84, $19, $a1, $19, $95, $82, $22, $89, $22, $89, $22, $89, $22, $89, $84, $19, $ad
 	db $41, $38
-	dw @song0ref2393
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2393
 	db $82, $22, $a1, $84, $19, $a1, $19, $95, $82, $22, $a1, $22, $89, $84, $19, $ad, $82, $22, $a1, $84, $19, $a1, $19, $95
 	db $82, $22, $89, $22, $89, $22, $89, $22, $89
-@song0ref2501:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2501:
 	db $84, $19, $89, $80, $0c, $a1, $82, $22, $81, $80, $0c, $9d, $84, $19, $89, $80, $0c, $95, $84, $19, $89, $80, $0c, $89
 	db $82, $22, $81, $80, $16, $85, $18, $89, $13, $89, $82, $22, $81, $80, $13, $85, $84, $19, $89, $80, $0c, $a1, $82, $22
 	db $81, $80, $0c, $9d, $84, $19, $89, $80, $0c, $95, $84, $19, $89, $80, $0c, $89, $82, $22, $81, $80, $18, $85, $82, $22
 	db $81, $80, $18, $85, $82, $22, $81, $80, $18, $85, $82, $22, $81, $80, $18, $85
 	db $41, $3c
-	dw @song0ref2501
-@song0ref2592:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2501
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2592:
 	db $84, $19, $89, $80, $09, $a1, $82, $22, $81, $80, $09, $9d, $84, $19, $89, $80, $09, $95, $84, $19, $89, $80, $09, $89
 	db $82, $22, $81, $80, $13, $85, $15, $89, $10, $89, $82, $22, $81, $80, $10, $85, $84, $19, $89, $80, $09, $a1, $82, $22
 	db $81, $80, $09, $9d, $84, $19, $89, $80, $09, $95, $84, $19, $89, $80, $09, $89, $82, $22, $81, $80, $15, $85, $82, $22
 	db $81, $80, $15, $85, $82, $22, $81, $80, $15, $85, $82, $22, $81, $80, $15, $85
 	db $41, $3c
-	dw @song0ref2592
-@song0ref2683:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2592
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2683:
 	db $84, $19, $89, $80, $12, $a1, $82, $22, $81, $80, $12, $9d, $84, $19, $89, $80, $12, $95, $84, $19, $89, $80, $12, $89
 	db $82, $22, $81, $80, $1c, $85, $1e, $89, $19, $89, $82, $22, $81, $80, $19, $85, $84, $19, $89, $80, $12, $a1, $82, $22
 	db $81, $80, $12, $9d, $84, $19, $89, $80, $12, $95, $84, $19, $89, $80, $12, $89, $82, $22, $81, $80, $1e, $85, $82, $22
 	db $81, $80, $1e, $85, $82, $22, $81, $80, $1e, $85, $82, $22, $81, $80, $1e, $85
 	db $41, $3c
-	dw @song0ref2683
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2683
 	db $41, $3c
-	dw @song0ref2683
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2683
 	db $84, $19, $89, $80, $11, $a1, $82, $22, $81, $80, $11, $9d, $84, $19, $89, $80, $11, $95, $84, $19, $89, $80, $11, $89
 	db $82, $22, $81, $80, $1b, $85, $1d, $89, $18, $89, $82, $22, $81, $80, $18, $85, $84, $19, $89, $80, $11, $a1, $82, $22
 	db $81, $80, $11, $9d, $84, $19, $89, $80, $11, $95, $84, $19, $89, $80, $11, $89, $82, $22, $81, $80, $1d, $85, $82, $22
 	db $81, $80, $1d, $85, $82, $22, $81, $80, $1d, $85, $82, $22, $81, $80, $1d, $85, $84, $19, $89, $80, $0f, $89, $00, $ff
 	db $ff, $9d, $82, $22, $89, $22, $89, $22, $95, $42
-	dw @song0ch2loop
-@song0ch3:
-@song0ref2885:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch2loop
+@music_data_silver_surfer_c_stephen_ruddy_song0ch3:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2885:
 	db $73, $9c, $20, $ab, $72, $99, $71, $99, $00, $db, $a2, $17, $89, $18, $83, $72, $85, $19, $89, $1a, $73, $89, $1b, $87
 	db $74, $81, $1c, $89, $1d, $83, $75, $85, $1e, $89, $1f, $89, $20, $87, $77, $81, $7f, $8a, $1a, $89, $1a, $89, $1a, $95
-@song0ch3loop:
-@song0ref2934:
+@music_data_silver_surfer_c_stephen_ruddy_song0ch3loop:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref2934:
 	db $9a, $19, $c1, $45, $81, $19, $c1, $45, $81, $19, $a9, $45, $81, $19, $95, $88, $1f, $89, $1f, $89, $8c, $1b, $89, $88
 	db $1f, $89, $8a, $1a, $95, $88, $1f, $89, $1f, $89, $8c, $1b, $89, $88, $1f, $89, $8a, $1a, $89, $1a, $89, $1a, $95
 	db $41, $26
-	dw @song0ref2934
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2934
 	db $41, $26
-	dw @song0ref2934
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2934
 	db $a6, $1b, $95, $98, $1d, $95, $96, $1f, $95, $8a, $1a, $95, $96, $1f, $95, $98, $1d, $a1, $1d, $a1, $1d, $95, $1d, $95
 	db $96, $1f, $95, $8a, $1a, $95, $96, $1f, $95, $98, $1d, $a1, $1d, $a1, $1d, $95
-@song0ref3027:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref3027:
 	db $7f
-@song0ref3028:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref3028:
 	db $8e, $1b, $95, $86, $1f, $95, $8a, $1a, $95, $86, $1f, $89, $8c, $1b, $89, $86, $1f, $89, $88, $1f, $89, $8c, $1b, $89
 	db $88, $1f, $89, $8a, $1a, $95, $88, $1f, $89, $8a, $1a, $89, $8e, $1b, $95, $86, $1f, $95, $8a, $1a, $95, $86, $1f, $89
 	db $8c, $1b, $89, $86, $1f, $89, $88, $1f, $89, $8c, $1b, $89, $88, $1f, $89, $8a, $1a, $89, $1a, $89, $1a, $89, $1a, $89
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $75, $80, $1b, $74, $16, $9b, $73, $9f, $72, $9f, $71, $9f, $00, $ff, $c1, $16, $83, $17, $72, $83, $18, $83, $73, $19
 	db $83, $1a, $81, $74, $81, $1b, $83, $1c, $75, $83, $1d, $83, $76, $1e, $83, $1f, $81, $77, $81
 	db $41, $32
-	dw @song0ref3027
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3027
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $32
-	dw @song0ref3028
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3028
 	db $41, $24
-	dw @song0ref2885
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref2885
 	db $42
-	dw @song0ch3loop
-@song0ch4:
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch3loop
+@music_data_silver_surfer_c_stephen_ruddy_song0ch4:
 	db $ff, $ff, $e7
-@song0ch4loop:
+@music_data_silver_surfer_c_stephen_ruddy_song0ch4loop:
 	db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $97
-@song0ref3235:
+@music_data_silver_surfer_c_stephen_ruddy_song0ref3235:
 	db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
 	db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
 	db $41, $24
-	dw @song0ref3235
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ref3235
 	db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $e7, $42
-	dw @song0ch4loop
+	dw @music_data_silver_surfer_c_stephen_ruddy_song0ch4loop

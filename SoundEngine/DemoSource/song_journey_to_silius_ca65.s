@@ -6,74 +6,74 @@
 
 music_data_journey_to_silius:
 	.byte 1
-	.word @instruments
-	.word @samples-4
+	.word @music_data_journey_to_silius_instruments
+	.word @music_data_journey_to_silius_samples-4
 ; 00 : Title Screen
-	.word @song0ch0
-	.word @song0ch1
-	.word @song0ch2
-	.word @song0ch3
-	.word @song0ch4
-	.byte .lobyte(@tempo_env_1_mid), .hibyte(@tempo_env_1_mid), 0, 0
+	.word @music_data_journey_to_silius_song0ch0
+	.word @music_data_journey_to_silius_song0ch1
+	.word @music_data_journey_to_silius_song0ch2
+	.word @music_data_journey_to_silius_song0ch3
+	.word @music_data_journey_to_silius_song0ch4
+	.byte .lobyte(@music_data_journey_to_silius_tempo_env_1_mid), .hibyte(@music_data_journey_to_silius_tempo_env_1_mid), 0, 0
 
 .export music_data_journey_to_silius
 .global FAMISTUDIO_DPCM_PTR
 
-@instruments:
-	.word @env7,@env15,@env10,@env0 ; 00 : NoiseTom1
-	.word @env17,@env16,@env10,@env0 ; 01 : NoiseTom2
-	.word @env7,@env16,@env10,@env0 ; 02 : NoiseTom3
-	.word @env5,@env8,@env10,@env0 ; 03 : TriTomPlain
-	.word @env5,@env12,@env10,@env0 ; 04 : TriTomArp
-	.word @env3,@env8,@env10,@env4 ; 05 : LeadDuty0Main
-	.word @env1,@env8,@env14,@env0 ; 06 : LeadDuty1Plain
-	.word @env3,@env8,@env14,@env4 ; 07 : LeadDuty1Main
-	.word @env6,@env8,@env11,@env4 ; 08 : LeadDuty2Main
-	.word @env2,@env8,@env10,@env4 ; 09 : LeadDuty0Buzz
-	.word @env9,@env8,@env11,@env0 ; 0a : LeadDuty2Plain
-	.word @env9,@env8,@env10,@env0 ; 0b : LeadDuty0Plain
-	.word @env13,@env8,@env10,@env0 ; 0c : LeadDuty0Outro
+@music_data_journey_to_silius_instruments:
+	.word @music_data_journey_to_silius_env7,@music_data_journey_to_silius_env15,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env0 ; 00 : NoiseTom1
+	.word @music_data_journey_to_silius_env17,@music_data_journey_to_silius_env16,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env0 ; 01 : NoiseTom2
+	.word @music_data_journey_to_silius_env7,@music_data_journey_to_silius_env16,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env0 ; 02 : NoiseTom3
+	.word @music_data_journey_to_silius_env5,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env0 ; 03 : TriTomPlain
+	.word @music_data_journey_to_silius_env5,@music_data_journey_to_silius_env12,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env0 ; 04 : TriTomArp
+	.word @music_data_journey_to_silius_env3,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env4 ; 05 : LeadDuty0Main
+	.word @music_data_journey_to_silius_env1,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env14,@music_data_journey_to_silius_env0 ; 06 : LeadDuty1Plain
+	.word @music_data_journey_to_silius_env3,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env14,@music_data_journey_to_silius_env4 ; 07 : LeadDuty1Main
+	.word @music_data_journey_to_silius_env6,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env11,@music_data_journey_to_silius_env4 ; 08 : LeadDuty2Main
+	.word @music_data_journey_to_silius_env2,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env4 ; 09 : LeadDuty0Buzz
+	.word @music_data_journey_to_silius_env9,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env11,@music_data_journey_to_silius_env0 ; 0a : LeadDuty2Plain
+	.word @music_data_journey_to_silius_env9,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env0 ; 0b : LeadDuty0Plain
+	.word @music_data_journey_to_silius_env13,@music_data_journey_to_silius_env8,@music_data_journey_to_silius_env10,@music_data_journey_to_silius_env0 ; 0c : LeadDuty0Outro
 
-@env0:
+@music_data_journey_to_silius_env0:
 	.byte $00,$c0,$7f,$00,$02
-@env1:
+@music_data_journey_to_silius_env1:
 	.byte $00,$c3,$7f,$00,$02
-@env2:
+@music_data_journey_to_silius_env2:
 	.byte $08,$ce,$cb,$ca,$c9,$c9,$00,$05,$c1,$c5,$c4,$c3,$c2,$c1,$00,$0d
-@env3:
+@music_data_journey_to_silius_env3:
 	.byte $0f,$c4,$c6,$c9,$c8,$0e,$c7,$0e,$c6,$0e,$c5,$0e,$c4,$00,$0c,$c1,$c5,$c4,$c3,$c2,$c1,$00,$14
-@env4:
+@music_data_journey_to_silius_env4:
 	.byte $00,$c0,$07,$c1,$c3,$c6,$c3,$c1,$bf,$bd,$ba,$bd,$bf,$00,$03
-@env5:
+@music_data_journey_to_silius_env5:
 	.byte $00,$cf,$7f,$00,$02
-@env6:
+@music_data_journey_to_silius_env6:
 	.byte $0e,$c5,$c6,$c6,$ca,$cb,$cc,$cb,$ca,$c9,$c8,$c7,$00,$0b,$c1,$c5,$c4,$c3,$c2,$c1,$00,$13
-@env7:
+@music_data_journey_to_silius_env7:
 	.byte $00,$cc,$cc,$c9,$c5,$c2,$c0,$00,$06
-@env8:
+@music_data_journey_to_silius_env8:
 	.byte $c0,$7f,$00,$01
-@env9:
+@music_data_journey_to_silius_env9:
 	.byte $00,$c4,$7f,$00,$02
-@env10:
+@music_data_journey_to_silius_env10:
 	.byte $7f,$00,$00
-@env11:
+@music_data_journey_to_silius_env11:
 	.byte $c2,$7f,$00,$00
-@env12:
+@music_data_journey_to_silius_env12:
 	.byte $c0,$bf,$be,$bd,$bc,$bb,$ba,$b9,$b8,$b7,$00,$09
-@env13:
+@music_data_journey_to_silius_env13:
 	.byte $00,$c5,$c9,$c9,$c8,$00,$04
-@env14:
+@music_data_journey_to_silius_env14:
 	.byte $c1,$7f,$00,$00
-@env15:
+@music_data_journey_to_silius_env15:
 	.byte $c0,$c3,$00,$01
-@env16:
+@music_data_journey_to_silius_env16:
 	.byte $c0,$c6,$00,$01
-@env17:
+@music_data_journey_to_silius_env17:
 	.byte $00,$cd,$ce,$cc,$c8,$c9,$c7,$c6,$c4,$c3,$c1,$c0,$00,$0b
-@env18:
+@music_data_journey_to_silius_env18:
 	.byte $00,$c0,$be,$bc,$bc,$bd,$bf,$c1,$c3,$c4,$c4,$c2,$00,$01
 
-@samples:
+@music_data_journey_to_silius_samples:
 	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$3f,$09,$40 ; 00 Sample 1 (Pitch:9)
 	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$3f,$0a,$40 ; 01 Sample 1 (Pitch:10)
 	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$3f,$0c,$40 ; 02 Sample 1 (Pitch:12)
@@ -90,479 +90,480 @@ music_data_journey_to_silius:
 	.byte $40+.lobyte(FAMISTUDIO_DPCM_PTR),$3f,$0a,$40 ; 0d Sample 5 (Pitch:10)
 	.byte $40+.lobyte(FAMISTUDIO_DPCM_PTR),$3f,$0e,$40 ; 0e Sample 5 (Pitch:14)
 
-@tempo_env_1_mid:
+@music_data_journey_to_silius_tempo_env_1_mid:
 	.byte $03,$05,$80
 
-@song0ch0:
+@music_data_journey_to_silius_song0ch0:
 	.byte $cf
-@song0ch0loop:
-	.byte $47, .lobyte(@tempo_env_1_mid), .hibyte(@tempo_env_1_mid), $00, $a5, $8c, $19, $91, $1c, $91, $19, $91, $1e, $1f, $81
-	.byte $20, $9f, $1e, $91
-@song0ref22:
+@music_data_journey_to_silius_song0ch0loop:
+	.byte $47, .lobyte(@music_data_journey_to_silius_tempo_env_1_mid), .hibyte(@music_data_journey_to_silius_tempo_env_1_mid)
+	.byte $00, $a5, $8c, $19, $91, $1c, $91, $19, $91, $1e, $1f, $81, $20, $9f, $1e, $91
+@music_data_journey_to_silius_song0ref22:
 	.byte $8a, $14, $af, $45, $87, $16
-@song0ref28:
+@music_data_journey_to_silius_song0ref28:
 	.byte $d7, $45, $87, $48, $00, $a5, $8c, $19, $91, $1c, $91, $19, $91, $1e, $1f, $81, $20, $9f, $1e, $91, $8a, $20, $af, $45
 	.byte $87, $1e
 	.byte $41, $12
-	.word @song0ref28
+	.word @music_data_journey_to_silius_song0ref28
 	.byte $41, $1c
-	.word @song0ref22
+	.word @music_data_journey_to_silius_song0ref22
 	.byte $d7, $45, $87
-@song0ref63:
+@music_data_journey_to_silius_song0ref63:
 	.byte $48, $a7, $17, $91, $45, $91, $16, $87, $45, $87, $17, $91, $45, $91, $17, $a5, $45, $91, $16, $91, $45, $91, $16, $87
 	.byte $45, $87, $17, $87, $45, $af
 	.byte $41, $1d
-	.word @song0ref63
+	.word @music_data_journey_to_silius_song0ref63
 	.byte $41, $1d
-	.word @song0ref63
+	.word @music_data_journey_to_silius_song0ref63
 	.byte $48, $a7, $17, $91, $45, $91, $16, $87, $45, $87, $17, $91, $45, $91, $14, $ff, $93, $45, $87, $90
-@song0ref119:
+@music_data_journey_to_silius_song0ref119:
 	.byte $19, $91, $48, $89, $45, $87, $19, $87, $45, $87, $1c, $87, $45, $87, $19, $87, $45, $87, $1e, $87, $45, $87, $19, $91
 	.byte $45, $91, $20, $9b, $45, $87
-@song0ref149:
+@music_data_journey_to_silius_song0ref149:
 	.byte $19, $87, $45, $87, $1e, $87, $45, $87, $19, $87, $45, $87, $1c, $87, $45, $87, $19, $91, $45, $91, $14, $91, $48, $89
 	.byte $45, $87, $14, $87, $45, $87, $17, $87, $45, $87, $14, $87, $45, $87, $17, $87, $45, $87, $1a, $43, $1b, $81, $43, $1c
 	.byte $8b, $1b, $87, $45, $87, $19, $ff, $93, $45, $87
 	.byte $41, $19
-	.word @song0ref119
+	.word @music_data_journey_to_silius_song0ref119
 	.byte $1e, $43, $1f, $81, $43, $20, $9f
 	.byte $41, $21
-	.word @song0ref149
+	.word @music_data_journey_to_silius_song0ref149
 	.byte $19, $87, $45, $87, $1a, $43, $1b, $81, $43, $1c, $8b, $1b, $87, $45, $87, $17, $87, $45, $87, $19, $ff, $a7, $45, $87
 	.byte $48
-@song0ref245:
+@music_data_journey_to_silius_song0ref245:
 	.byte $1e, $81, $43, $1f, $81, $43, $20, $d9, $1e, $87, $45, $87, $1c, $87, $45, $87, $1b, $d7, $45, $87, $1c, $91, $45, $87
 	.byte $1e, $91, $45, $87, $1e, $43, $1f, $81, $43, $20, $8b, $48, $ff, $8b, $8e, $1e, $43, $1f, $81, $43, $20, $9f, $1e, $43
 	.byte $1f, $81, $43, $20, $8b, $22, $91, $45, $91, $23, $9b, $45, $af, $48, $90
 	.byte $41, $1a
-	.word @song0ref245
+	.word @music_data_journey_to_silius_song0ref245
 	.byte $19, $91, $48, $ff, $b3, $92, $19, $87, $45, $87, $19, $87, $45, $87, $19, $87, $45, $87, $19, $87, $45, $c3, $48, $8a
-@song0ref335:
+@music_data_journey_to_silius_song0ref335:
 	.byte $19, $c3, $45, $87, $19, $c3, $45, $87, $19, $af, $45, $87, $19, $cd, $45, $91, $48
 	.byte $41, $10
-	.word @song0ref335
+	.word @music_data_journey_to_silius_song0ref335
 	.byte $48
 	.byte $41, $10
-	.word @song0ref335
+	.word @music_data_journey_to_silius_song0ref335
 	.byte $48, $1b, $c3, $45, $87, $1b, $c3, $45, $87, $1b, $af, $45, $87, $1b, $cd, $45, $91, $48, $19, $9b, $45, $87, $19, $9b
 	.byte $45, $87, $19, $91, $45, $87, $19, $91, $45, $87, $19
-@song0ref394:
+@music_data_journey_to_silius_song0ref394:
 	.byte $af, $45, $87, $19, $9b, $45, $87, $19, $91, $45, $87, $19, $91
-@song0ref407:
+@music_data_journey_to_silius_song0ref407:
 	.byte $45, $87, $19, $91, $48, $9d, $45, $87, $19, $9b, $45, $87, $19, $91, $45, $87, $19, $91, $45, $87, $19, $c3, $45, $87
 	.byte $17, $c3
 	.byte $41, $14
-	.word @song0ref407
+	.word @music_data_journey_to_silius_song0ref407
 	.byte $41, $18
-	.word @song0ref394
+	.word @music_data_journey_to_silius_song0ref394
 	.byte $1b, $91, $45, $87, $20, $91, $45, $87, $20, $ff, $a7, $45, $87, $48, $00, $a5, $96
-@song0ref456:
+@music_data_journey_to_silius_song0ref456:
 	.byte $19, $91, $1b, $91
-@song0ref460:
+@music_data_journey_to_silius_song0ref460:
 	.byte $1c, $91, $1e, $91, $19, $91, $1b, $91, $1c, $91, $1e, $91, $19, $91, $1b, $91, $1c, $91, $1e, $91, $19, $91, $1b, $91
 	.byte $48
 	.byte $41, $18
-	.word @song0ref460
+	.word @music_data_journey_to_silius_song0ref460
 	.byte $1c, $91, $1e, $91, $19, $91, $1b, $91, $48
 	.byte $41, $14
-	.word @song0ref460
+	.word @music_data_journey_to_silius_song0ref460
 	.byte $1b, $91, $1c, $91, $1e, $91, $20, $b9, $48, $23, $91, $25, $a5
-@song0ref513:
+@music_data_journey_to_silius_song0ref513:
 	.byte $27, $91, $28, $91, $2a, $91, $25, $91, $27, $91, $28, $91, $2a, $a5, $2c, $91, $2d, $91, $2f, $91, $2a, $91, $2c, $91
 	.byte $48, $2d, $91, $2f, $91, $31, $ff, $ed, $43, $50, $05, $3d, $37, $a5, $42
-	.word @song0ch0loop
-@song0ch1:
+	.word @music_data_journey_to_silius_song0ch0loop
+@music_data_journey_to_silius_song0ch1:
 	.byte $cf
-@song0ch1loop:
+@music_data_journey_to_silius_song0ch1loop:
 	.byte $8e
-@song0ref557:
+@music_data_journey_to_silius_song0ref557:
 	.byte $19, $87, $45, $87, $1c, $87, $45, $87, $19, $87, $45, $87, $1e, $43, $1f, $81, $43, $20, $9f, $1e, $87, $45, $87, $1c
 	.byte $9b, $45, $87, $17, $af, $45, $87, $19, $d7, $45, $87
 	.byte $41, $19
-	.word @song0ref557
+	.word @music_data_journey_to_silius_song0ref557
 	.byte $23, $af, $45, $87, $22, $d7, $45, $87
 	.byte $41, $21
-	.word @song0ref557
+	.word @music_data_journey_to_silius_song0ref557
 	.byte $41, $19
-	.word @song0ref557
+	.word @music_data_journey_to_silius_song0ref557
 	.byte $23, $af, $45, $87, $22, $d7, $45, $87, $a7, $8a
-@song0ref619:
+@music_data_journey_to_silius_song0ref619:
 	.byte $1c, $91, $45, $91, $1b, $87, $45, $87, $1c, $91, $45, $91, $1c, $a5, $45, $91, $1b, $91, $45, $91, $1b, $87, $45, $87
 	.byte $1c, $87, $45, $af, $a7
 	.byte $41, $1d
-	.word @song0ref619
+	.word @music_data_journey_to_silius_song0ref619
 	.byte $41, $1d
-	.word @song0ref619
+	.word @music_data_journey_to_silius_song0ref619
 	.byte $1c, $91, $45, $91, $1b, $87, $45, $87, $1c, $91, $45, $91, $1b, $ff, $a7, $45, $87, $93, $94, $19, $b9, $1c, $91, $19
 	.byte $91, $1e, $91, $19, $a5, $20, $a5, $19, $91, $1e, $91, $19, $91, $1c, $91, $19, $91, $93, $14, $b9, $17, $91, $14, $91
 	.byte $17, $91, $1a, $1b, $81, $1c, $8b, $1b, $91, $19, $ff, $89, $cf, $1c, $91, $19, $91, $1e, $91, $19, $a5, $1e, $1f, $81
 	.byte $20, $9f, $19, $91, $1e, $91, $19, $91, $1c, $91, $19, $91, $93, $14, $b9, $17, $91, $19, $91, $1a, $1b, $81, $1c, $8b
 	.byte $1b, $91, $17, $91, $19, $ff, $89, $a7
-@song0ref758:
+@music_data_journey_to_silius_song0ref758:
 	.byte $1e, $81, $1f, $81, $20, $d9, $1e, $91, $1c, $91, $1b, $e1, $1c, $9b, $1e, $87, $95, $1f, $81, $20, $ef, $8a, $1b, $9b
 	.byte $45, $87, $1b, $87, $45, $87, $1e, $91, $45, $91, $20, $9b, $45, $af, $a7, $94
 	.byte $41, $10
-	.word @song0ref758
+	.word @music_data_journey_to_silius_song0ref758
 	.byte $93, $19, $ff, $9d, $92, $14, $87, $45, $87, $14, $87, $45, $87, $14, $87, $45, $87, $14, $87, $45, $c3, $8e
-@song0ref823:
+@music_data_journey_to_silius_song0ref823:
 	.byte $20, $c3, $45, $87, $1e, $c3, $45, $87, $1c, $af, $45, $87, $1e, $cd, $45, $91
 	.byte $41, $10
-	.word @song0ref823
+	.word @music_data_journey_to_silius_song0ref823
 	.byte $41, $10
-	.word @song0ref823
+	.word @music_data_journey_to_silius_song0ref823
 	.byte $21, $c3, $45, $87, $20, $c3, $45, $87, $1e, $af, $45, $87, $20, $cd, $45, $91, $20, $9b, $45, $87, $1e, $9b, $45, $87
 	.byte $1c, $91, $45, $87, $1e, $91, $45, $87
-@song0ref877:
+@music_data_journey_to_silius_song0ref877:
 	.byte $20, $af, $45, $87, $1e, $9b, $45, $87, $1c, $91, $45, $87, $1e, $91
-@song0ref891:
+@music_data_journey_to_silius_song0ref891:
 	.byte $45, $87, $20, $91, $9d, $45, $87, $1e, $9b, $45, $87, $1c, $91, $45, $87, $1e, $91, $45, $87, $1c, $c3, $45, $87, $1b
 	.byte $c3
 	.byte $41, $13
-	.word @song0ref891
+	.word @music_data_journey_to_silius_song0ref891
 	.byte $41, $19
-	.word @song0ref877
+	.word @music_data_journey_to_silius_song0ref877
 	.byte $20, $91, $45, $87, $23, $91, $45, $87, $25, $ff, $a7, $45, $87, $98
 	.byte $41, $1c
-	.word @song0ref456
+	.word @music_data_journey_to_silius_song0ref456
 	.byte $41, $18
-	.word @song0ref460
+	.word @music_data_journey_to_silius_song0ref460
 	.byte $41, $18
-	.word @song0ref460
+	.word @music_data_journey_to_silius_song0ref460
 	.byte $1c, $91, $1e, $91, $1b, $91, $1c, $91, $1e, $91, $20, $b9, $23, $91, $25, $91, $93
 	.byte $41, $18
-	.word @song0ref513
-	.byte $2d, $91, $2f, $91, $31, $cd, $49, .lobyte(@env18), .hibyte(@env18), $ff, $9d, $49, .lobyte(@env0), .hibyte(@env0)
-	.byte $4a, $81, $43, $50, $06, $3d, $30, $cd, $42
-	.word @song0ch1loop
-@song0ch2:
-@song0ref990:
+	.word @music_data_journey_to_silius_song0ref513
+	.byte $2d, $91, $2f, $91, $31, $cd, $49, .lobyte(@music_data_journey_to_silius_env18), .hibyte(@music_data_journey_to_silius_env18)
+	.byte $ff, $9d, $49, .lobyte(@music_data_journey_to_silius_env0), .hibyte(@music_data_journey_to_silius_env0), $4a, $81, $43
+	.byte $50, $06, $3d, $30, $cd, $42
+	.word @music_data_journey_to_silius_song0ch1loop
+@music_data_journey_to_silius_song0ch2:
+@music_data_journey_to_silius_song0ref990:
 	.byte $86, $26, $25, $26, $81, $25, $26, $27, $26, $25, $26, $88, $26, $85, $00, $26, $85, $00, $1e, $85, $00, $1e, $85, $00
 	.byte $1a, $8f, $00
-@song0ch2loop:
-@song0ref1018:
+@music_data_journey_to_silius_song0ch2loop:
+@music_data_journey_to_silius_song0ref1018:
 	.byte $1c, $83, $00, $8b, $1c, $83, $00, $8b, $22, $8f, $00, $1c, $83, $00, $8b, $1c, $83, $00, $8b, $1c, $83, $00, $8b, $22
 	.byte $8f, $00, $1c, $83, $00, $8b
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
-@song0ref1054:
+	.word @music_data_journey_to_silius_song0ref1018
+@music_data_journey_to_silius_song0ref1054:
 	.byte $26, $8f, $00, $26, $8f, $00, $1e, $8f, $00, $1a, $8f, $00, $26, $85, $00, $26, $85, $00, $89, $26, $85, $00, $1e, $85
 	.byte $00, $1e, $85, $00, $1a, $8f, $00
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
-@song0ref1094:
+	.word @music_data_journey_to_silius_song0ref1018
+@music_data_journey_to_silius_song0ref1094:
 	.byte $26, $85, $00, $26, $85, $00, $1e, $85, $00, $1a, $85, $00, $26, $85, $00, $1e, $85, $00, $1e, $85, $00, $1a, $85, $00
 	.byte $41, $17
-	.word @song0ref990
+	.word @music_data_journey_to_silius_song0ref990
 	.byte $85, $00, $1a, $85, $00
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1f
-	.word @song0ref1054
+	.word @music_data_journey_to_silius_song0ref1054
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $18
-	.word @song0ref1094
+	.word @music_data_journey_to_silius_song0ref1094
 	.byte $41, $17
-	.word @song0ref990
+	.word @music_data_journey_to_silius_song0ref990
 	.byte $85, $00, $1a, $85, $00
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1f
-	.word @song0ref1054
+	.word @music_data_journey_to_silius_song0ref1054
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $18
-	.word @song0ref1094
+	.word @music_data_journey_to_silius_song0ref1094
 	.byte $41, $17
-	.word @song0ref990
+	.word @music_data_journey_to_silius_song0ref990
 	.byte $85, $00, $1a, $85, $00
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1f
-	.word @song0ref1054
+	.word @music_data_journey_to_silius_song0ref1054
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $1c, $83, $00, $8b, $22, $8f, $00, $22, $8f, $00, $22, $8f, $00, $22, $8f, $00, $95, $86, $22, $83, $00, $9d, $88
-@song0ref1234:
+@music_data_journey_to_silius_song0ref1234:
 	.byte $1c, $83, $00, $c7, $1c, $83, $00, $c7, $1c, $83, $00, $b3, $1c, $83, $00, $9f, $86, $22, $83, $00, $8b, $88, $1c, $83
 	.byte $00, $9f
 	.byte $41, $18
-	.word @song0ref1234
+	.word @music_data_journey_to_silius_song0ref1234
 	.byte $41, $18
-	.word @song0ref1234
+	.word @music_data_journey_to_silius_song0ref1234
 	.byte $41, $10
-	.word @song0ref1234
+	.word @music_data_journey_to_silius_song0ref1234
 	.byte $22, $8f, $00, $22, $8f, $00, $22, $8f, $00
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1f
-	.word @song0ref1054
+	.word @music_data_journey_to_silius_song0ref1054
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $18
-	.word @song0ref1094
+	.word @music_data_journey_to_silius_song0ref1094
 	.byte $41, $17
-	.word @song0ref990
+	.word @music_data_journey_to_silius_song0ref990
 	.byte $85, $00, $1a, $85, $00
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1f
-	.word @song0ref1054
+	.word @music_data_journey_to_silius_song0ref1054
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $18
-	.word @song0ref1094
+	.word @music_data_journey_to_silius_song0ref1094
 	.byte $41, $17
-	.word @song0ref990
+	.word @music_data_journey_to_silius_song0ref990
 	.byte $85, $00, $1a, $85, $00
 	.byte $41, $1e
-	.word @song0ref1018
+	.word @music_data_journey_to_silius_song0ref1018
 	.byte $41, $18
-	.word @song0ref1094
+	.word @music_data_journey_to_silius_song0ref1094
 	.byte $41, $17
-	.word @song0ref990
+	.word @music_data_journey_to_silius_song0ref990
 	.byte $85, $00, $1a, $85, $00, $42
-	.word @song0ch2loop
-@song0ch3:
+	.word @music_data_journey_to_silius_song0ch2loop
+@music_data_journey_to_silius_song0ch3:
 	.byte $82, $1a, $83, $1a, $85, $1a, $83, $1a, $87, $1a, $87, $1a, $87, $1a, $87, $1a, $87, $1a, $87
-@song0ch3loop:
-@song0ref1379:
+@music_data_journey_to_silius_song0ch3loop:
+@music_data_journey_to_silius_song0ref1379:
 	.byte $80
-@song0ref1380:
+@music_data_journey_to_silius_song0ref1380:
 	.byte $10, $91, $10, $91, $82, $1a, $91, $80, $10, $91, $10, $91, $10, $91, $82, $1a, $91, $80, $10, $91
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
-@song0ref1406:
+	.word @music_data_journey_to_silius_song0ref1380
+@music_data_journey_to_silius_song0ref1406:
 	.byte $84, $1a, $91, $1a, $91, $1a, $91, $1a, $91, $1a, $87, $1a, $91, $1a, $87, $1a, $87, $1a, $87, $1a, $91
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
-@song0ref1436:
+	.word @music_data_journey_to_silius_song0ref1380
+@music_data_journey_to_silius_song0ref1436:
 	.byte $84
-@song0ref1437:
+@music_data_journey_to_silius_song0ref1437:
 	.byte $1a, $87, $1a, $87, $1a, $87, $1a, $87, $1a, $87, $1a, $87, $1a, $87, $1a, $87
 	.byte $41, $10
-	.word @song0ref1437
+	.word @music_data_journey_to_silius_song0ref1437
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $14
-	.word @song0ref1406
+	.word @music_data_journey_to_silius_song0ref1406
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1436
+	.word @music_data_journey_to_silius_song0ref1436
 	.byte $41, $10
-	.word @song0ref1437
+	.word @music_data_journey_to_silius_song0ref1437
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $14
-	.word @song0ref1406
+	.word @music_data_journey_to_silius_song0ref1406
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1436
+	.word @music_data_journey_to_silius_song0ref1436
 	.byte $41, $10
-	.word @song0ref1437
+	.word @music_data_journey_to_silius_song0ref1437
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $14
-	.word @song0ref1406
+	.word @music_data_journey_to_silius_song0ref1406
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $10, $91, $82, $1a, $91, $1a, $91, $1a, $91, $1a, $a7, $1a, $a3, $80
-@song0ref1545:
+@music_data_journey_to_silius_song0ref1545:
 	.byte $10, $cd, $10, $cd, $10, $b9, $10, $a5, $82, $1a, $91, $80, $10, $a5, $10, $cd, $10, $cd, $10, $b9, $10, $a5, $82, $1a
 	.byte $91, $80, $10, $a5
 	.byte $41, $16
-	.word @song0ref1545
+	.word @music_data_journey_to_silius_song0ref1545
 	.byte $1a, $91, $1a, $91
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $14
-	.word @song0ref1406
+	.word @music_data_journey_to_silius_song0ref1406
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1436
+	.word @music_data_journey_to_silius_song0ref1436
 	.byte $41, $10
-	.word @song0ref1437
+	.word @music_data_journey_to_silius_song0ref1437
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $14
-	.word @song0ref1406
+	.word @music_data_journey_to_silius_song0ref1406
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1380
+	.word @music_data_journey_to_silius_song0ref1380
 	.byte $41, $10
-	.word @song0ref1436
+	.word @music_data_journey_to_silius_song0ref1436
 	.byte $41, $10
-	.word @song0ref1437
+	.word @music_data_journey_to_silius_song0ref1437
 	.byte $41, $10
-	.word @song0ref1379
+	.word @music_data_journey_to_silius_song0ref1379
 	.byte $41, $10
-	.word @song0ref1436
+	.word @music_data_journey_to_silius_song0ref1436
 	.byte $41, $10
-	.word @song0ref1437
+	.word @music_data_journey_to_silius_song0ref1437
 	.byte $42
-	.word @song0ch3loop
-@song0ch4:
+	.word @music_data_journey_to_silius_song0ch3loop
+@music_data_journey_to_silius_song0ch4:
 	.byte $cf
-@song0ch4loop:
-@song0ref1648:
+@music_data_journey_to_silius_song0ch4loop:
+@music_data_journey_to_silius_song0ref1648:
 	.byte $03, $91
-@song0ref1650:
+@music_data_journey_to_silius_song0ref1650:
 	.byte $03, $91, $03, $91, $03, $91, $03, $91, $03, $91, $03, $91, $03, $91, $02, $91, $02, $91, $04, $91, $01, $91, $01, $91
 	.byte $08, $91, $01, $91, $08, $91
 	.byte $41, $10
-	.word @song0ref1648
-@song0ref1683:
+	.word @music_data_journey_to_silius_song0ref1648
+@music_data_journey_to_silius_song0ref1683:
 	.byte $06, $91, $06, $91, $0a, $91, $01, $91, $01, $91, $08, $91, $01, $91, $08, $91
 	.byte $41, $20
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $10
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $10
-	.word @song0ref1683
+	.word @music_data_journey_to_silius_song0ref1683
 	.byte $41, $10
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $10
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $10
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $10
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $10
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $10
-	.word @song0ref1648
+	.word @music_data_journey_to_silius_song0ref1648
 	.byte $41, $12
-	.word @song0ref1650
+	.word @music_data_journey_to_silius_song0ref1650
 	.byte $02, $91, $02, $91, $02, $91, $02, $91, $02, $91, $02, $91, $02
-@song0ref1742:
+@music_data_journey_to_silius_song0ref1742:
 	.byte $91, $03, $91, $03, $91, $03, $91, $05, $91, $03, $91, $05, $91, $03, $91, $03, $91, $0c, $91, $0d, $91, $0c, $91, $0c
 	.byte $91, $0c, $91, $0d, $91, $0c, $91, $0c, $91, $02, $91, $02, $91, $02, $91, $04, $91, $0c, $91, $0d, $91, $0c, $91, $0c
 	.byte $91, $03, $91, $05, $91, $03, $91, $03, $91, $03, $91, $05, $91, $03, $91, $03
 	.byte $41, $40
-	.word @song0ref1742
-@song0ref1809:
+	.word @music_data_journey_to_silius_song0ref1742
+@music_data_journey_to_silius_song0ref1809:
 	.byte $91, $01, $91, $01, $91, $08, $91, $01, $91, $01, $91, $01, $91, $08, $91, $01, $91, $02, $91, $02, $91, $04, $91, $02
 	.byte $91, $02, $91, $02, $91, $04, $91, $02, $91, $03, $91, $03, $91, $05, $91, $03, $91, $05, $91, $03, $91, $03, $91, $05
-@song0ref1857:
+@music_data_journey_to_silius_song0ref1857:
 	.byte $91, $03, $91, $03, $91, $05, $91, $03, $91, $03, $91, $05, $91, $03, $91, $05
 	.byte $41, $35
-	.word @song0ref1809
+	.word @music_data_journey_to_silius_song0ref1809
 	.byte $03, $91, $03, $91, $03, $cd, $03, $cd, $03, $cd, $03, $b9, $03, $a5, $03, $91, $05, $91, $03, $91, $0c, $cd, $0c, $cd
 	.byte $0c, $b9, $0c, $a5, $0c, $91, $0d, $91, $0c, $91, $07, $cd, $07, $cd, $07, $b9, $07, $a5, $07, $91, $0d, $91, $07, $91
 	.byte $0c, $cd, $0c, $cd, $0c, $b9, $0c, $a5, $0d, $91, $0c, $91, $0d
 	.byte $41, $10
-	.word @song0ref1857
-@song0ref1940:
+	.word @music_data_journey_to_silius_song0ref1857
+@music_data_journey_to_silius_song0ref1940:
 	.byte $91, $0c, $91, $0c, $91, $0d, $91, $0c, $91, $0c, $91, $0d, $91, $0c, $91, $0d, $91, $07, $91, $07, $91, $09, $91, $07
 	.byte $91, $07, $91, $09, $91, $07, $91, $09
 	.byte $41, $11
-	.word @song0ref1940
+	.word @music_data_journey_to_silius_song0ref1940
 	.byte $03, $91, $03, $91, $05, $91, $03, $91, $03, $91, $05, $91, $03, $91, $05
 	.byte $41, $20
-	.word @song0ref1940
+	.word @music_data_journey_to_silius_song0ref1940
 	.byte $41, $10
-	.word @song0ref1857
-@song0ref1996:
+	.word @music_data_journey_to_silius_song0ref1857
+@music_data_journey_to_silius_song0ref1996:
 	.byte $91, $03, $91, $03, $91, $03, $91, $05, $91, $03, $91, $03, $91, $0d, $91, $05, $91, $0c, $91, $0c, $91, $0c, $91, $0d
 	.byte $91, $0c, $91, $0c, $91, $09, $91, $0d, $91, $0e, $91, $0e, $91, $0e, $91, $0f, $91, $0e, $91, $0e, $91, $02, $91, $0f
 	.byte $91, $07, $91, $07, $91, $07, $91, $09, $91, $07, $91, $07, $91, $0b, $91, $09
 	.byte $41, $40
-	.word @song0ref1996
+	.word @music_data_journey_to_silius_song0ref1996
 	.byte $41, $11
-	.word @song0ref1996
+	.word @music_data_journey_to_silius_song0ref1996
 	.byte $03, $91, $03, $91, $05, $91, $03, $91, $03, $91, $05, $91, $03, $91, $05, $91, $42
-	.word @song0ch4loop
+	.word @music_data_journey_to_silius_song0ch4loop

@@ -161,6 +161,9 @@ FAMISTUDIO_CFG_DPCM_SUPPORT   = 1
 ; Must be enabled if you are calling sound effects from a different thread than the sound engine update.
 ; FAMISTUDIO_CFG_THREAD         = 1     
 
+; Enable to use the CC65 compatible entrypoints via the provided header file
+; FAMISTUDIO_CFG_C_BINDINGS   = 1
+
 ;======================================================================================================================
 ; 4) SUPPORTED FEATURES CONFIGURATION
 ;
@@ -1190,7 +1193,7 @@ FAMISTUDIO_ALIAS_NOISE_LO   = famistudio_output_buf + 10
 ; [in] y : Pointer to music data (hi)
 ;======================================================================================================================
 
-_famistudio_init:
+famistudio_init::
     
 .define .music_data_ptr "famistudio_ptr0"
 
@@ -1214,7 +1217,7 @@ _famistudio_init:
     .endif
     sta famistudio_pal_adjust
 
-    jsr _famistudio_music_stop
+    jsr famistudio_music_stop
 
     ; Instrument address
     ldy #1
@@ -1305,7 +1308,7 @@ _famistudio_init:
     sta FAMISTUDIO_S5B_DATA
     .endif
 
-    jmp _famistudio_music_stop
+    jmp famistudio_music_stop
 
 ;======================================================================================================================
 ; FAMISTUDIO_MUSIC_STOP (public)
@@ -1316,7 +1319,7 @@ _famistudio_init:
 ; [in] no input params.
 ;======================================================================================================================
 
-_famistudio_music_stop::
+famistudio_music_stop::
 
     lda #0
     sta famistudio_song_speed
@@ -1424,7 +1427,7 @@ _famistudio_music_stop::
 ; [in] a : Song index.
 ;======================================================================================================================
 
-_famistudio_music_play::
+famistudio_music_play::
 
 .tmp = famistudio_r0
 .song_list_ptr = famistudio_ptr0
@@ -1477,7 +1480,7 @@ _famistudio_music_play::
     .endif
     .endif
 
-    jsr _famistudio_music_stop
+    jsr famistudio_music_stop
 
     ldx #0
 
@@ -1641,7 +1644,7 @@ _famistudio_music_play::
 ; [in] a : zero to play, non-zero to pause.
 ;======================================================================================================================
 
-_famistudio_music_pause::
+famistudio_music_pause::
 
     tax
     beq .unpause
@@ -3260,7 +3263,7 @@ famistudio_update_row_with_delays:
 ; [in] no input params.
 ;======================================================================================================================
 
-_famistudio_update::
+famistudio_update::
 
 .pitch_env_type = famistudio_r0
 .temp_pitch     = famistudio_r1
@@ -5476,7 +5479,7 @@ famistudio_sample_stop:
 ; [in] a: Sample index, 1...63.
 ;======================================================================================================================
 
-_famistudio_sfx_sample_play::
+famistudio_sfx_sample_play::
 
     ldx #1
     stx famistudio_dpcm_effect
@@ -5596,7 +5599,7 @@ famistudio_music_sample_play:
 ; [in] y: Sound effect data pointer (hi)
 ;======================================================================================================================
 
-_famistudio_sfx_init::
+famistudio_sfx_init::
 
 .effect_list_ptr = famistudio_ptr0
 
@@ -5662,7 +5665,7 @@ famistudio_sfx_clear_channel:
 ; [in] x: Offset of sound effect channel, should be FAMISTUDIO_SFX_CH0..FAMISTUDIO_SFX_CH3
 ;======================================================================================================================
 
-_famistudio_sfx_play::
+famistudio_sfx_play::
 
 .effect_data_ptr = famistudio_ptr0
 
@@ -6569,3 +6572,66 @@ famistudio_volume_table:
     .byte 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f
 
     .endif
+
+
+; ======================================================================================================================
+; Alternative entry points for calling from c code
+;
+; Notes: the C function definitions use __fastcall__ meaning they will put the
+; last parameter in a register before the call according to the rules laid out
+; in the documentation here: https://cc65.github.io/doc/cc65-intern.html
+; and here: https://github.com/cc65/wiki/wiki/Parameter-passing-and-calling-conventions
+; and here: https://github.com/cc65/wiki/wiki/Parameter-and-return-stacks
+; ======================================================================================================================
+.ifne FAMISTUDIO_CFG_C_BINDINGS
+
+    .area	OSEG (PAG, OVR)
+    .famistudio_sfx_init_TEMPVAR:
+    _famistudio_init_PARM_2:: .ds 2
+
+.area _CODE
+
+; Required to fetch the extra parameter from zeropage overlay segment
+
+_famistudio_init::
+    ldx *_famistudio_init_PARM_2
+    ldy *_famistudio_init_PARM_2+1
+    jmp famistudio_init
+.globl _famistudio_init
+
+; A = song_index; So we can safely re-export the symbol
+_famistudio_music_play=famistudio_music_play
+.globl _famistudio_music_play
+; A = mode; safe to re-export the symbol as well
+_famistudio_music_pause=famistudio_music_pause
+.globl _famistudio_music_pause
+
+; No parameters so its safe to re-export
+_famistudio_music_stop=famistudio_music_stop
+.globl _famistudio_music_stop
+_famistudio_update=famistudio_update
+.globl _famistudio_update
+
+.ifne FAMISTUDIO_CFG_SFX_SUPPORT
+
+.globl _famistudio_sfx_init
+.globl _famistudio_sfx_play
+.globl _famistudio_sfx_sample_play
+
+_famistudio_sfx_init::
+    ; Move pointer param from XA -> YX
+    stx *.famistudio_sfx_init_TEMPVAR
+    ldy *.famistudio_sfx_init_TEMPVAR
+    tax
+    jmp famistudio_sfx_init
+
+; A = song_index, X = channel; So we can safely re-export the symbol
+_famistudio_sfx_play=famistudio_sfx_play
+.globl _famistudio_sfx_play
+
+; A = sample_index; So we can safely re-export the symbol
+_famistudio_sfx_sample_play=famistudio_sfx_sample_play
+.globl _famistudio_sfx_sample_play
+
+.endif
+.endif

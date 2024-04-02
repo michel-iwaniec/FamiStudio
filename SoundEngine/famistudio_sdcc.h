@@ -13,25 +13,15 @@
 
 /**
  * =====================================================================================================================
- * famistudio_init_ntsc (public)
+ * famistudio_init (public)
  *
  * Reset APU, initialize the sound engine with some music data.
  *
+ * [in] platform : Playback platform, zero for PAL, non-zero for NTSC.
  * [in] music_data : Pointer to music data 
  * ======================================================================================================================
  */
-void __fastcall__ famistudio_init_ntsc(void* music_data);
-
-/**
- * =====================================================================================================================
- * famistudio_init_pal (public)
- *
- * Reset APU, initialize the sound engine with some music data.
- *
- * [in] music_data : Pointer to music data 
- * ======================================================================================================================
- */
-void __fastcall__ famistudio_init_pal(void* music_data);
+void __fastcall__ famistudio_init(unsigned char platform, void* music_data);
 
 /**
  * ======================================================================================================================

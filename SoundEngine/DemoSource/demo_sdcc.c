@@ -88,9 +88,8 @@ void __fastcall__ play_song(unsigned char song_index) {
     // they are actually 3 different song data, with a single song in each.
     // For a real game, if would be preferable to export all songs together
     // so that instruments shared across multiple songs are only exported once.
-    famistudio_init_ntsc(song_address);
+    famistudio_init(FAMISTUDIO_PLATFORM_NTSC, song_address);
     famistudio_music_play(0);
-    //update_title();
 }
 
 /**
@@ -101,7 +100,9 @@ void __fastcall__ play_song(unsigned char song_index) {
  * switching tracks.
  */
 void __fastcall__ init() {
-    //famistudio_sfx_init(&sounds);
+    famistudio_sfx_init(&sounds);
+    famistudio_init(FAMISTUDIO_PLATFORM_NTSC, &music_data_silver_surfer_c_stephen_ruddy);
+    famistudio_music_play(0);
 }
 
 /**
@@ -121,17 +122,17 @@ void __fastcall__ update() {
 
     } else if (gamepad_pressed & J_SELECT && song_index == JOURNEY_TO_SILAS) {
         // Undocumented: selects plays a SFX sample when journey to silius is loaded.
-        //famistudio_sfx_sample_play(21);
+        famistudio_sfx_sample_play(21);
 
     } else if (gamepad_pressed & J_START) {
         pause_flag ^= 1;
         famistudio_music_pause(pause_flag);
 
     } else if (gamepad_pressed & J_A) {
-        //famistudio_sfx_play(0, FAMISTUDIO_SFX_CH0);
+        famistudio_sfx_play(0, FAMISTUDIO_SFX_CH0);
 
     } else if (gamepad_pressed & J_B) {
-        //famistudio_sfx_play(1, FAMISTUDIO_SFX_CH1);
+        famistudio_sfx_play(1, FAMISTUDIO_SFX_CH1);
 
     }
 
@@ -153,8 +154,7 @@ uint8_t joypad_safe()
 
 void main(void)
 {
-    famistudio_init_ntsc(&music_data_silver_surfer_c_stephen_ruddy);
-    famistudio_music_play(0);
+    init();
     while(1)
     {
         // Poll joypad

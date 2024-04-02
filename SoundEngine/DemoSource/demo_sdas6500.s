@@ -445,9 +445,9 @@ play_song:
     
     play_song_play_song:
     lda #1 ; NTSC
-    jsr _famistudio_init
+    jsr famistudio_init
     lda #0
-    jsr _famistudio_music_play
+    jsr famistudio_music_play
 
     ;update title.
     ldx #2
@@ -561,7 +561,7 @@ main:
     ; Load SFX
     ldx #<_sounds
     ldy #>_sounds
-    jsr _famistudio_sfx_init
+    jsr famistudio_sfx_init
 
 main_loop:
     jsr gamepad_poll_dpcm_safe
@@ -609,7 +609,7 @@ main_loop:
         bne draw
 
         lda #21
-        jsr _famistudio_sfx_sample_play
+        jsr famistudio_sfx_sample_play
         jmp draw
 
     check_start:
@@ -621,7 +621,7 @@ main_loop:
         eor *pause_flag
         sta *pause_flag
 
-        jsr _famistudio_music_pause
+        jsr famistudio_music_pause
         jmp draw
 
     check_a:
@@ -631,7 +631,7 @@ main_loop:
 
         lda #0
         ldx #FAMISTUDIO_SFX_CH0
-        jsr _famistudio_sfx_play
+        jsr famistudio_sfx_play
         beq draw
 
     check_b:
@@ -641,10 +641,10 @@ main_loop:
 
         lda #1
         ldx #FAMISTUDIO_SFX_CH1
-        jsr _famistudio_sfx_play
+        jsr famistudio_sfx_play
         beq draw
 draw:
-    jsr _famistudio_update ; TODO: Call in NMI.
+    jsr famistudio_update ; TODO: Call in NMI.
  
     lda *nmt_update_mode
     bne draw_done ; Dont allow update if we already have an update pending.

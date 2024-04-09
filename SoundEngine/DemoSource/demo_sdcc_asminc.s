@@ -18,7 +18,7 @@ FAMISTUDIO_USE_VIBRATO        = 1
 FAMISTUDIO_USE_ARPEGGIO       = 1
 FAMISTUDIO_CFG_SMOOTH_VIBRATO = 1
 FAMISTUDIO_USE_RELEASE_NOTES  = 1
-FAMISTUDIO_DPCM_OFF           = 0xe000
+FAMISTUDIO_DPCM_OFF           = 0xE000
 
 FAMISTUDIO_VERSION_MAJOR  = 4
 FAMISTUDIO_VERSION_MINOR  = 1
@@ -48,6 +48,6 @@ song_journey_to_silius::
 song_shatterhand::
     .include "song_shatterhand_sdcc.s"
 
-;.area _DPCM (ABS)
-;.org 0xE000
-;.incbin "song_journey_to_silius_sdcc.dmc"
+.area _DPCM (ABS)
+.org 0xE000
+.incbin "song_journey_to_silius_sdcc.dmc"

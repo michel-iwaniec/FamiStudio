@@ -24,11 +24,14 @@ FAMISTUDIO_VERSION_MAJOR  = 4
 FAMISTUDIO_VERSION_MINOR  = 1
 FAMISTUDIO_VERSION_HOTFIX = 0
 
-
+; SDAS-specific config.
+.define FAMISTUDIO_SDAS_ZP_SEGMENT   "_ZP"
+.define FAMISTUDIO_SDAS_RAM_SEGMENT  "_BSS"
+.define FAMISTUDIO_SDAS_CODE_SEGMENT "_CODE"
 
 .include "..\famistudio_sdcc.s"
 
-.area _CODE
+.area FAMISTUDIO_SDAS_CODE_SEGMENT
 
 .globl _music_data_silver_surfer_c_stephen_ruddy
 .globl _music_data_shatterhand

@@ -47,8 +47,6 @@ p0: .ds 2
 .area _OAM (PAG)
 oam: .ds 256        ; sprite OAM data to be uploaded by DMA
 
-.area _CODE
-
 ; FamiStudio config.
 FAMISTUDIO_CFG_EXTERNAL       = 1
 FAMISTUDIO_CFG_DPCM_SUPPORT   = 1
@@ -66,10 +64,10 @@ FAMISTUDIO_DPCM_OFF           = 0xe000
 
 FAMISTUDIO_CFG_C_BINDINGS = 0
 
-; SDAS-specifc config.
-;.define FAMISTUDIO_SDAS_ZP_SEGMENT   "_ZP"
-;.define FAMISTUDIO_SDAS_RAM_SEGMENT  "RAM"
-;.define FAMISTUDIO_SDAS_CODE_SEGMENT "_CODE"
+; SDAS-specific config.
+.define FAMISTUDIO_SDAS_ZP_SEGMENT   "_ZP"
+.define FAMISTUDIO_SDAS_RAM_SEGMENT  "_BSS"
+.define FAMISTUDIO_SDAS_CODE_SEGMENT "_CODE"
 
 .include "..\famistudio_sdcc.s"
 

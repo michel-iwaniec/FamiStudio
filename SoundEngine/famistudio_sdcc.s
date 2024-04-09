@@ -769,7 +769,7 @@ FAMISTUDIO_FIRST_POSITIVE_SLIDE_CHANNEL = 3
 ;    .rsset FAMISTUDIO_NESASM_BSS_RSSET 
 ;    .endif
 
-.area _BSS
+.area FAMISTUDIO_SDAS_RAM_SEGMENT
 
 famistudio_env_value:             .ds FAMISTUDIO_NUM_ENVELOPES
 famistudio_env_repeat:            .ds FAMISTUDIO_NUM_ENVELOPES
@@ -938,7 +938,7 @@ famistudio_sfx_buffer = famistudio_sfx_base_addr + 4
 ;    .rsset FAMISTUDIO_NESASM_ZP_RSSET 
 ;    .endif
 
-.area _ZP (PAG)
+.area FAMISTUDIO_SDAS_ZP_SEGMENT
 
 famistudio_r0:   .rs 1
 famistudio_r1:   .rs 1
@@ -956,17 +956,7 @@ famistudio_ptr1_hi = famistudio_ptr1+1
 ; CODE
 ;======================================================================================================================
 
-;    .ifdef FAMISTUDIO_NESASM_CODE_SECTION
-;    .code
-;    .endif
-;    .ifdef FAMISTUDIO_NESASM_CODE_BANK
-;    .bank FAMISTUDIO_NESASM_CODE_BANK 
-;    .endif
-;    .ifdef FAMISTUDIO_NESASM_CODE_ORG
-;    .org FAMISTUDIO_NESASM_CODE_ORG 
-;    .endif
-
-.area _CODE
+.area FAMISTUDIO_SDAS_CODE_SEGMENT
 
 FAMISTUDIO_APU_PL1_VOL    = 0x4000
 FAMISTUDIO_APU_PL1_SWEEP  = 0x4001
@@ -6589,7 +6579,7 @@ famistudio_volume_table:
     .famistudio_sfx_init_TEMPVAR:
     _famistudio_init_PARM_2:: .ds 2
 
-.area _CODE
+.area FAMISTUDIO_SDAS_CODE_SEGMENT
 
 ; Required to fetch the extra parameter from zeropage overlay segment
 

@@ -66,6 +66,11 @@ FAMISTUDIO_DPCM_OFF           = 0xe000
 
 FAMISTUDIO_CFG_C_BINDINGS = 0
 
+; SDAS-specifc config.
+;.define FAMISTUDIO_SDAS_ZP_SEGMENT   "_ZP"
+;.define FAMISTUDIO_SDAS_RAM_SEGMENT  "RAM"
+;.define FAMISTUDIO_SDAS_CODE_SEGMENT "_CODE"
+
 .include "..\famistudio_sdcc.s"
 
 ; Our single screen.
@@ -421,8 +426,8 @@ play_song:
         sta *text_ptr+0
         lda #>song_title_silver_surfer
         sta *text_ptr+1
-        ldx #<_music_data_silver_surfer_c_stephen_ruddy
-        ldy #>_music_data_silver_surfer_c_stephen_ruddy
+        ldx #<music_data_silver_surfer_c_stephen_ruddy
+        ldy #>music_data_silver_surfer_c_stephen_ruddy
         jmp play_song_play_song
 
     journey_to_silius:
@@ -430,8 +435,8 @@ play_song:
         sta *text_ptr+0
         lda #>song_title_jts
         sta *text_ptr+1
-        ldx #<_music_data_journey_to_silius
-        ldy #>_music_data_journey_to_silius
+        ldx #<music_data_journey_to_silius
+        ldy #>music_data_journey_to_silius
         jmp play_song_play_song
 
     shatterhand:
@@ -439,8 +444,8 @@ play_song:
         sta *text_ptr+0
         lda #>song_title_shatterhand
         sta *text_ptr+1
-        ldx #<_music_data_shatterhand
-        ldy #>_music_data_shatterhand
+        ldx #<music_data_shatterhand
+        ldy #>music_data_shatterhand
         jmp play_song_play_song
     
     play_song_play_song:
@@ -559,8 +564,8 @@ main:
     jsr play_song
 
     ; Load SFX
-    ldx #<_sounds
-    ldy #>_sounds
+    ldx #<sounds
+    ldy #>sounds
     jsr famistudio_sfx_init
 
 main_loop:

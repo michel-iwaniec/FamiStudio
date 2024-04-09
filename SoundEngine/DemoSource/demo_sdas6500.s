@@ -5,17 +5,17 @@ FAMISTUDIO_VERSION_MAJOR  = 4
 FAMISTUDIO_VERSION_MINOR  = 1
 FAMISTUDIO_VERSION_HOTFIX = 0
 
-;.area _HEADER
-;INES_MAPPER = 0 ; 0 = NROM
-;INES_MIRROR = 1 ; 0 = horizontal mirroring, 1 = vertical mirroring
-;INES_SRAM   = 0 ; 1 = battery backed SRAM at 0x6000-7FFF
-;
-;.db 'N', 'E', 'S', 0x1A ; ID 
-;.db 0x02 ; 16k PRG bank count
-;.db 0x01 ; 8k CHR bank count
-;.db INES_MIRROR | (INES_SRAM << 1) | ((INES_MAPPER & 0xf) << 4)
-;.db (INES_MAPPER & 0b11110000)
-;.db 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 ; padding
+.area _HEADER (ABS)
+.org 0x7FF0
+INES_MAPPER = 0 ; 0 = NROM
+INES_MIRROR = 1 ; 0 = horizontal mirroring, 1 = vertical mirroring
+INES_SRAM   = 0 ; 1 = battery backed SRAM at 0x6000-7FFF
+.db 'N', 'E', 'S', 0x1A ; ID 
+.db 0x02 ; 16k PRG bank count
+.db 0x01 ; 8k CHR bank count
+.db INES_MIRROR | (INES_SRAM << 1) | ((INES_MAPPER & 0xf) << 4)
+.db (INES_MAPPER & 0b11110000)
+.db 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 ; padding
 
 .area _ZP (PAG)
 nmi_lock:           .ds 1 ; prevents NMI re-entry
@@ -853,6 +853,7 @@ song_shatterhand:
 .dw reset
 .dw irq
 
-;.area _CHARS
-;.incbin "demo.chr"
-;.incbin "demo.chr"
+.area _CHARS (ABS)
+.org 0x10000
+.incbin "demo.chr"
+.incbin "demo.chr"

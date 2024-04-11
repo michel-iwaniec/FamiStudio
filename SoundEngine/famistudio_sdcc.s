@@ -1903,11 +1903,18 @@ famistudio_get_note_pitch_vrc6_saw:
     lda famistudio_chn_note+idx
     bne .nocut
 ;    .if (idx\@ >= FAMISTUDIO_VRC6_CH0_IDX) & (idx\@ <= FAMISTUDIO_VRC6_CH2_IDX) & (FAMISTUDIO_USE_PHASE_RESET != 0) & (phase_reset_mask\@ != 0)
-;    lda #0
-;    sta <.pitch\@+1
-;    .endif
+    .ifge idx - FAMISTUDIO_VRC6_CH0_IDX
+    .ifle idx - FAMISTUDIO_VRC6_CH2_IDX
+    .if FAMISTUDIO_USE_PHASE_RESET
+    .if phase_reset_mask
+    lda #0
+    sta *.pitch+1
+    .endif
+    .endif
+    .endif
+    .endif
     jmp .set_volume
-;
+
 .nocut:
     clc
     adc famistudio_env_value+env_offset+FAMISTUDIO_ENV_NOTE_OFF
@@ -2007,11 +2014,14 @@ famistudio_get_note_pitch_vrc6_saw:
         .endif
     .endif
 
-;    ; HACK : VRC6 only. We are out of macro param for NESASM.
-;    .if (idx\@ >= FAMISTUDIO_VRC6_CH0_IDX) & (idx\@ <= FAMISTUDIO_VRC6_CH2_IDX)
-;        ora #0x80
-;    .endif
-;
+    ; HACK : VRC6 only. We are out of macro param for NESASM.
+    ;.if (idx\@ >= FAMISTUDIO_VRC6_CH0_IDX) & (idx\@ <= FAMISTUDIO_VRC6_CH2_IDX)
+    .ifge idx - FAMISTUDIO_VRC6_CH0_IDX
+    .ifle idx - FAMISTUDIO_VRC6_CH2_IDX
+        ora #0x80
+    .endif
+    .endif
+
     .endif ; idx = 3
 ;
 ;    .if (pulse_prev\@ = 0) | (reg_sweep\@ = 0) | (FAMISTUDIO_CFG_SFX_SUPPORT != 0) | (FAMISTUDIO_CFG_SMOOTH_VIBRATO = 0)
@@ -2046,30 +2056,54 @@ famistudio_get_note_pitch_vrc6_saw:
         lda famistudio_env_value+env_offset+FAMISTUDIO_ENV_VOLUME_OFF
     .endif
 
-;    .if (FAMISTUDIO_EXP_VRC6 != 0) & (idx\@ = FAMISTUDIO_VRC6_CH2_IDX)
-;    ; VRC6 saw has 6-bits
-;    ldx famistudio_vrc6_saw_volume
-;    bmi .set_volume\@ 
-;    asl a
-;    ldx famistudio_vrc6_saw_volume
-;    beq .set_volume\@
-;    asl a
-;    .endif
+    ;.if (FAMISTUDIO_EXP_VRC6 != 0) & (idx\@ = FAMISTUDIO_VRC6_CH2_IDX)
+    .if FAMISTUDIO_EXP_VRC6
+    .ifeq idx - FAMISTUDIO_VRC6_CH2_IDX
+    ; VRC6 saw has 6-bits
+    ldx famistudio_vrc6_saw_volume
+    bmi .set_volume
+    asl a
+    ldx famistudio_vrc6_saw_volume
+    beq .set_volume
+    asl a
+    .endif
+    .endif
 
 .set_volume:
 ;
 ;    .if (idx\@ = 0) | (idx\@ = 1) | (idx\@ = 3) | ((FAMISTUDIO_EXP_MMC5 != 0) & ((idx\@ = FAMISTUDIO_MMC5_CH0_IDX) | (idx\@ = FAMISTUDIO_MMC5_CH1_IDX)))
-    .ifne idx - 2
+    .ifge idx - 0
+    .ifle idx - 1
     ldx famistudio_env_value+env_offset+FAMISTUDIO_ENV_DUTY_OFF
     ora famistudio_duty_lookup, x
-;    .else
-;    .if ((FAMISTUDIO_EXP_VRC6 != 0) & ((idx\@ = FAMISTUDIO_VRC6_CH0_IDX) | (idx\@ = FAMISTUDIO_VRC6_CH1_IDX)))
-;    ldx famistudio_env_value+env_offset\@+FAMISTUDIO_ENV_DUTY_OFF
-;    ora famistudio_vrc6_duty_lookup, x
-;    .endif
     .endif
-;
-;    ; HACK : We are out of macro param for NESASM.
+    .endif
+
+    .ifeq idx - 3
+    ldx famistudio_env_value+env_offset+FAMISTUDIO_ENV_DUTY_OFF
+    ora famistudio_duty_lookup, x
+    .endif
+    
+    .if FAMISTUDIO_EXP_MMC5
+    .ifge idx - FAMISTUDIO_MMC5_CH0_IDX
+    .ifle idx - FAMISTUDIO_MMC5_CH1_IDX
+    ldx famistudio_env_value+env_offset+FAMISTUDIO_ENV_DUTY_OFF
+    ora famistudio_duty_lookup, x
+    .endif
+    .endif
+    .endif
+    
+    ;.if ((FAMISTUDIO_EXP_VRC6 != 0) & ((idx\@ = FAMISTUDIO_VRC6_CH0_IDX) | (idx\@ = FAMISTUDIO_VRC6_CH1_IDX)))
+    .if FAMISTUDIO_EXP_VRC6
+    .ifge idx - FAMISTUDIO_VRC6_CH0_IDX
+    .ifle idx - FAMISTUDIO_VRC6_CH1_IDX
+    ldx famistudio_env_value+env_offset+FAMISTUDIO_ENV_DUTY_OFF
+    ora famistudio_vrc6_duty_lookup, x
+    .endif
+    .endif
+    .endif
+
+    ; HACK : We are out of macro param for NESASM.
     .ifeq (idx - 2)
     ora #0x80
     .else
@@ -2089,12 +2123,17 @@ famistudio_get_note_pitch_vrc6_saw:
         lda pulse_prev
         sta reg_hi
     .else
-;    .if (FAMISTUDIO_EXP_VRC6 != 0) & (idx >= FAMISTUDIO_VRC6_CH0_IDX) & (idx <= FAMISTUDIO_VRC6_CH2_IDX)
-;        lda *.pitch+1
-;        sta reg_hi
-;        ora #0x80
-;        sta reg_hi
-;    .endif
+    ;.if (FAMISTUDIO_EXP_VRC6 != 0) & (idx >= FAMISTUDIO_VRC6_CH0_IDX) & (idx <= FAMISTUDIO_VRC6_CH2_IDX)
+    .if FAMISTUDIO_EXP_VRC6
+    .ifge idx - FAMISTUDIO_VRC6_CH0_IDX
+    .ifle idx - FAMISTUDIO_VRC6_CH2_IDX
+        lda *.pitch+1
+        sta reg_hi
+        ora #0x80
+        sta reg_hi
+    .endif
+    .endif
+    .endif
     .endif    
     .phase_reset_done:
    .endif
@@ -3616,9 +3655,9 @@ famistudio_update::
 
     .if FAMISTUDIO_EXP_VRC6
 .update_vrc6_sound:
-    famistudio_update_channel_sound FAMISTUDIO_VRC6_CH0_IDX, FAMISTUDIO_VRC6_CH0_ENVS, 0, FAMISTUDIO_VRC6_PL1_HI, FAMISTUDIO_VRC6_PL1_LO, FAMISTUDIO_VRC6_PL1_VOL, 0, #0x04
-    famistudio_update_channel_sound FAMISTUDIO_VRC6_CH1_IDX, FAMISTUDIO_VRC6_CH1_ENVS, 0, FAMISTUDIO_VRC6_PL2_HI, FAMISTUDIO_VRC6_PL2_LO, FAMISTUDIO_VRC6_PL2_VOL, 0, #0x08
-    famistudio_update_channel_sound FAMISTUDIO_VRC6_CH2_IDX, FAMISTUDIO_VRC6_CH2_ENVS, 0, FAMISTUDIO_VRC6_SAW_HI, FAMISTUDIO_VRC6_SAW_LO, FAMISTUDIO_VRC6_SAW_VOL, 0, #0x10
+    famistudio_update_channel_sound FAMISTUDIO_VRC6_CH0_IDX, FAMISTUDIO_VRC6_CH0_ENVS, , FAMISTUDIO_VRC6_PL1_HI, FAMISTUDIO_VRC6_PL1_LO, FAMISTUDIO_VRC6_PL1_VOL, , #0x04
+    famistudio_update_channel_sound FAMISTUDIO_VRC6_CH1_IDX, FAMISTUDIO_VRC6_CH1_ENVS, , FAMISTUDIO_VRC6_PL2_HI, FAMISTUDIO_VRC6_PL2_LO, FAMISTUDIO_VRC6_PL2_VOL, , #0x08
+    famistudio_update_channel_sound FAMISTUDIO_VRC6_CH2_IDX, FAMISTUDIO_VRC6_CH2_ENVS, , FAMISTUDIO_VRC6_SAW_HI, FAMISTUDIO_VRC6_SAW_LO, FAMISTUDIO_VRC6_SAW_VOL, , #0x10
     .endif
 
     .if FAMISTUDIO_EXP_MMC5

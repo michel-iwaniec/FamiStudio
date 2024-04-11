@@ -722,16 +722,17 @@ FAMISTUDIO_EPSM_PITCH_SHIFT = 3
     ;.if (FAMISTUDIO_EXP_N163_CHN_CNT > 4)
     .ifgt (FAMISTUDIO_EXP_N163_CHN_CNT - 4)
 FAMISTUDIO_N163_PITCH_SHIFT = 5
+    .else
+        .ifgt FAMISTUDIO_EXP_N163_CHN_CNT - 2
+            FAMISTUDIO_N163_PITCH_SHIFT = 4
+        .else
+            .ifgt FAMISTUDIO_EXP_N163_CHN_CNT - 1
+                FAMISTUDIO_N163_PITCH_SHIFT = 3
+            .else
+                FAMISTUDIO_N163_PITCH_SHIFT = 2
+            .endif
+        .endif        
     .endif
-;    .if (FAMISTUDIO_EXP_N163_CHN_CNT > 2) & (FAMISTUDIO_EXP_N163_CHN_CNT <= 4)
-;FAMISTUDIO_N163_PITCH_SHIFT = 4
-;    .endif
-;    .if (FAMISTUDIO_EXP_N163_CHN_CNT > 1) & (FAMISTUDIO_EXP_N163_CHN_CNT <= 2)
-;FAMISTUDIO_N163_PITCH_SHIFT = 3
-;    .endif
-;    .if (FAMISTUDIO_EXP_N163_CHN_CNT = 1)
-;FAMISTUDIO_N163_PITCH_SHIFT = 2
-;    .endif 
 
     .if FAMISTUDIO_EXP_VRC7
 FAMISTUDIO_PITCH_SHIFT = FAMISTUDIO_VRC7_PITCH_SHIFT
@@ -1204,9 +1205,9 @@ famistudio_init::
 
     .if FAMISTUDIO_DUAL_SUPPORT
     tax
-    beq .pal
+    beq .famistudio_init_pal
     lda #97
-.pal:
+.famistudio_init_pal:
     .else
         .if FAMISTUDIO_CFG_PAL_SUPPORT
         lda #0
@@ -1516,10 +1517,10 @@ famistudio_music_play::
 
     .if FAMISTUDIO_USE_FAMITRACKER_TEMPO
     lda famistudio_pal_adjust
-    beq .pal
+    beq .famistudio_music_play_pal
     iny
     iny
-.pal:
+.famistudio_music_play_pal:
 
     ; Tempo increment.
     lda [*.song_list_ptr],y
@@ -2921,11 +2922,11 @@ famistudio_update_n163_channel_sound:
 .pitch_hi = famistudio_r2
 
     lda famistudio_chn_note+FAMISTUDIO_N163_CH0_IDX,y
-    bne .nocut
+    bne .famistudio_update_n163_channel_sound_nocut
     ldx #0 ; This will fetch volume 0.
-    jmp .update_volume
+    jmp .famistudio_update_n163_channel_sound_update_volume
 
-.nocut:
+.famistudio_update_n163_channel_sound_nocut:
 
     jsr famistudio_update_n163_wave
 
@@ -2978,7 +2979,7 @@ famistudio_update_n163_channel_sound:
     .endif
     tax
 
-.update_volume:
+.famistudio_update_n163_channel_sound_update_volume:
     ; Write volume
     lda famistudio_n163_vol_table,y
     sta FAMISTUDIO_N163_ADDR
@@ -2994,10 +2995,10 @@ famistudio_update_n163_channel_sound:
     sta famistudio_chn_inst_changed-FAMISTUDIO_FIRST_EXP_INST_CHANNEL+FAMISTUDIO_N163_CH0_IDX,y
 
     .if FAMISTUDIO_USE_PHASE_RESET
-.reset_phase:
+.famistudio_update_n163_channel_sound_reset_phase:
     lda famistudio_channel_to_phase_reset_mask+FAMISTUDIO_N163_CH0_IDX, y
     and famistudio_phase_reset_n163
-    beq .done
+    beq .famistudio_update_n163_channel_sound_done
     ldx #0
     lda famistudio_n163_phase_table_lo,y
     sta FAMISTUDIO_N163_ADDR
@@ -3010,7 +3011,7 @@ famistudio_update_n163_channel_sound:
     stx FAMISTUDIO_N163_DATA
     .endif
 
-.done:
+.famistudio_update_n163_channel_sound_done:
     rts
 
     .endif
@@ -6007,7 +6008,8 @@ famistudio_note_table_msb:
     .endif
 
     .if FAMISTUDIO_EXP_N163
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 1
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 1
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 1
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
@@ -6031,7 +6033,8 @@ famistudio_note_table_msb:
         .db 0x11,0x13,0x14,0x15,0x16,0x17,0x19,0x1a,0x1c,0x1e,0x20,0x21 ; Octave 6
         .db 0x23,0x26,0x28,0x2a,0x2d,0x2f,0x32,0x35,0x39,0x3c,0x40,0x43 ; Octave 7
     .endif
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 2
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 2
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 2
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
@@ -6055,7 +6058,8 @@ famistudio_note_table_msb:
         .db 0x23,0x26,0x28,0x2a,0x2d,0x2f,0x32,0x35,0x39,0x3c,0x40,0x43 ; Octave 6
         .db 0x47,0x4c,0x50,0x55,0x5a,0x5f,0x65,0x6b,0x72,0x78,0x80,0x87 ; Octave 7
     .endif
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 3
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 3
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 3
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
@@ -6079,7 +6083,8 @@ famistudio_note_table_msb:
         .db 0x35,0x39,0x3c,0x40,0x43,0x47,0x4c,0x50,0x55,0x5a,0x60,0x65 ; Octave 6
         .db 0x6b,0x72,0x78,0x80,0x87,0x8f,0x98,0xa1,0xab,0xb5,0xc0,0xcb ; Octave 7
     .endif
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 4
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 4
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 4
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
@@ -6103,7 +6108,8 @@ famistudio_note_table_msb:
         .db 0x47,0x4c,0x50,0x55,0x5a,0x5f,0x65,0x6b,0x72,0x78,0x80,0x87 ; Octave 6
         .db 0x8f,0x98,0xa1,0xaa,0xb5,0xbf,0xcb,0xd7,0xe4,0xf1,0xff,0xff ; Octave 7
     .endif
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 5
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 5
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 5
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
@@ -6127,7 +6133,8 @@ famistudio_note_table_msb:
         .db 0x59,0x5f,0x64,0x6a,0x71,0x77,0x7f,0x86,0x8e,0x97,0xa0,0xa9 ; Octave 6
         .db 0xb3,0xbe,0xc9,0xd5,0xe2,0xef,0xfe,0xff,0xff,0xff,0xff,0xff ; Octave 7
     .endif
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 6
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 6
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 6
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
@@ -6151,7 +6158,8 @@ famistudio_note_table_msb:
         .db 0x6b,0x72,0x78,0x80,0x87,0x8f,0x98,0xa1,0xab,0xb5,0xc0,0xcb ; Octave 6
         .db 0xd7,0xe4,0xf1,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff ; Octave 7
     .endif
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 7
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 7
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 7
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
@@ -6175,7 +6183,8 @@ famistudio_note_table_msb:
         .db 0x7d,0x85,0x8d,0x95,0x9e,0xa7,0xb1,0xbc,0xc7,0xd3,0xe0,0xed ; Octave 6
         .db 0xfb,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff ; Octave 7
     .endif
-    .if FAMISTUDIO_EXP_N163_CHN_CNT = 8
+    ;.if FAMISTUDIO_EXP_N163_CHN_CNT = 8
+    .ifeq FAMISTUDIO_EXP_N163_CHN_CNT - 8
     famistudio_exp_note_table_lsb:
     famistudio_n163_note_table_lsb:
         .db 0x00
